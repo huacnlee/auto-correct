@@ -1,0 +1,14 @@
+PATH
+  remote: .
+  specs:
+    auto-space (0.0.1)
+
+GEM
+  remote: http://ruby.taobao.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  auto-space!
