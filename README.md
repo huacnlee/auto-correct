@@ -4,19 +4,15 @@
 
 ## 例如
 
-```
-关于 SSH连接的Permission denied (publickey).
-怎样追踪一个 repo的新feature 和进展呢?
-vps上sessions不生效，但在本地的环境是ok的，why？
-bootstrap control-group对齐问题
-貌似github又down了
-```
-
-将会成为
-
-```
+```irb
+irb> require 'auto-space'
+true
+irb> "关于 SSH连接的Permission denied (publickey).".auto_space!
 关于 SSH 连接的 Permission denied (publickey).
-怎样追踪一个 Repo 的新 Feature 和进展呢?
-VPS 上 sessions 不生效，但在本地的环境是 OK 的，why？
-Bootstrap control-group 对齐问题
+irb> "怎样追踪一个 repo的新feature 和进展呢?".auto_space!
+怎样追踪一个 repo 的新 feature 和进展呢?
+irb> "vps上sessions不生效，但在本地的环境是ok的，why？".auto_space!
+vps 上 sessions 不生效，但在本地的环境是 OK 的，why?
+irb> "bootstrap control-group对齐问题".auto_space!
+bootstrap control-group 对齐问
 ```
