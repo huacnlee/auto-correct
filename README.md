@@ -1,8 +1,8 @@
-＃ auto-space
+# auto-space
 
 自动给中文英文之间加入合理的空格
 
-＃# 例如
+## 例如
 
 ```
 关于 SSH连接的Permission denied (publickey).
