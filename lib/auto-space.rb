@@ -1,3 +1,4 @@
+# coding: utf-8
 class String
   def auto_space!
     self.gsub! /((?![年月日])\p{Han})([a-zA-Z0-9@#\/])/u do

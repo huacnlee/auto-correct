@@ -1,3 +1,4 @@
+# coding: utf-8
 require "auto-space"
 
 describe "AutoSpace" do
