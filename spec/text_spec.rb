@@ -57,5 +57,16 @@ describe "AutoSpace" do
     "于3月开始".auto_space!.should == "于 3月 开始"
     "于2009年开始".auto_space!.should == "于 2009年 开始"
     "2013年3月10日-Ruby Saturday活动召集".auto_space!.should == "2013年3月10日-Ruby Saturday 活动召集"
+    "2013年12月22号开始出发".auto_space!.should == "2013年12月22号开始出发"
+    "12月22号开始出发".auto_space!.should == "12月22号开始出发"
+    "22号开始出发".auto_space!.should == "22号开始出发"
+  end
+  
+  it "should with 日XX/年XX/月XX/号XX" do
+    "五号的人物".auto_space!.should == "五号的人物"
+    "本月的活动".auto_space!.should == "本月的活动"
+    "今年就会出来".auto_space!.should == "今年就会出来"
+    "在日本比linode还便宜一半的服务器啊".auto_space!.should == "在日本比 linode 还便宜一半的服务器啊"
+    "明日大家都在这里".auto_space!.should == "明日大家都在这里"
   end
 end
