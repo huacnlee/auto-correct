@@ -2,6 +2,10 @@
 
 自动给中文英文之间加入合理的空格
 
+- [![Gem Version](https://badge.fury.io/rb/auto-space.png)](https://rubygems.org/gems/auto-space)
+- [![Build
+Status](https://secure.travis-ci.org/huacnlee/auto-space.png?branch=master&.png)](http://travis-ci.org/huacnlee/auto-space)
+
 ## 例如
 
 ```irb
