@@ -11,12 +11,12 @@ describe "AutoSpace" do
 
   context 'when have []' do
     let(:text) { "[北京]美企聘site/web大型应用开发高手-Ruby" }
-    it { should eq "[北京]美企聘 site/web 大型应用开发高手-Ruby" }
+    it { should eq "[北京] 美企聘 site/web 大型应用开发高手-Ruby" }
   end
 
   context 'when have ()' do
     let(:text) { "[成都](团800)招聘Rails工程师" }
-    it { should eq "[成都](团 800)招聘 Rails 工程师" }
+    it { should eq "[成都](团 800) 招聘 Rails 工程师" }
   end
 
   context 'when have .' do
@@ -86,6 +86,31 @@ describe "AutoSpace" do
     }
     it {
       "Gitlab怎么集成GitlabCI.".auto_space!.should == "Gitlab 怎么集成 GitlabCI."
+    }
+    
+    it {
+      "Linode的$10/mo的VPS在怎么样？".auto_space!.should == "Linode 的 $10/mo 的 VPS 在怎么样？"
+    }
+    it {
+      "[成都]招聘3名Rails程序员".auto_space!.should == "[成都] 招聘 3 名 Rails 程序员"
+      "注意[成都]招聘3名Rails程序员".auto_space!.should == "注意 [成都] 招聘 3 名 Rails 程序员"
+    }
+    it {
+      "(成都)招聘3名Rails程序员".auto_space!.should == "(成都) 招聘 3 名 Rails 程序员"
+      "注意(成都)招聘3名Rails程序员".auto_space!.should == "注意 (成都) 招聘 3 名 Rails 程序员"
+    }
+
+  end
+  
+  context "+" do
+    it {
+      "Rspec+Capybara边学边用边分享1-Rspec".auto_space!.should == "Rspec+Capybara 边学边用边分享 1-Rspec"
+    }
+    it {
+      "韩国+美国的什么什么".auto_space!.should == "韩国 + 美国的什么什么"
+    }
+    it {
+      "求一份ROR或者c++的开发工作".auto_space!.should == "求一份 ROR 或者 c++ 的开发工作"
     }
   end
 

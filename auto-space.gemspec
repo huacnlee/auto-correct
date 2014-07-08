@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "auto-space"
-  s.version     = "0.0.2"
+  s.version     = "0.0.3"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Luikore","Jason Lee"]
   s.email       = ["usurffx@gmail.com","huacnlee@gmail.com"]
@@ -12,4 +12,6 @@ Gem::Specification.new do |s|
   s.description = %q{自动给中文英文之间加入合理的空格}
   s.files        = Dir.glob("lib/**/*") + %w(README.md)
   s.require_path = 'lib'
+  
+  s.add_dependency "activesupport", '> 3.0.0'
 end
