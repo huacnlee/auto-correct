@@ -20,3 +20,8 @@ vps 上 sessions 不生效，但在本地的环境是 OK 的，why?
 irb> "bootstrap control-group对齐问题".auto_space!
 bootstrap control-group 对齐问
 ```
+
+## TODO
+
+* 'Foo'的"Bar" -> 'Foo' 的 "Bar"
+* 什么,时候 -> 什么, 时候 -> 什么，时候
