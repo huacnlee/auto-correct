@@ -101,6 +101,7 @@ describe "AutoSpace" do
       "(成都)Rails程序员3名".auto_space!.should == "(成都) Rails 程序员 3 名"
       "(成都)3名程序员需要".auto_space!.should == "(成都) 3 名程序员需要"
       "使用 Rails 的方式来开发移动应用(iOS/Android)".auto_space!.should == "使用 Rails 的方式来开发移动应用 (iOS/Android)"
+      "使用“iOS”8的方式来开发移动应用‘Ruby’".auto_space!.should == "使用 “iOS” 8 的方式来开发移动应用 ‘Ruby’"
     }
 
   end
