@@ -98,6 +98,9 @@ describe "AutoSpace" do
     it {
       "(成都)招聘3名Rails程序员".auto_space!.should == "(成都) 招聘 3 名 Rails 程序员"
       "注意(成都)招聘3名Rails程序员".auto_space!.should == "注意 (成都) 招聘 3 名 Rails 程序员"
+      "(成都)Rails程序员3名".auto_space!.should == "(成都) Rails 程序员 3 名"
+      "(成都)3名程序员需要".auto_space!.should == "(成都) 3 名程序员需要"
+      "使用 Rails 的方式来开发移动应用(iOS/Android)".auto_space!.should == "使用 Rails 的方式来开发移动应用 (iOS/Android)"
     }
 
   end

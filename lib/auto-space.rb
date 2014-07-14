@@ -9,6 +9,15 @@ class String
       "#$1 #$2"
     end
     
+    # Fix () [] near the English and number
+    self.gsub! /([a-zA-Z0-9]+)([\[\(])/u do
+      "#$1 #$2"
+    end
+    
+    self.gsub! /([\)\]])([a-zA-Z0-9]+)/u do
+      "#$1 #$2"
+    end
+    
     self
   end
 end

@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "auto-space"
-  s.version     = "0.0.3"
+  s.version     = "0.0.4"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Luikore","Jason Lee"]
   s.email       = ["usurffx@gmail.com","huacnlee@gmail.com"]
