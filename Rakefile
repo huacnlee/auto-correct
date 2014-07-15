@@ -1,5 +1,5 @@
 require "benchmark"
-require "auto-space"
+require "auto-correct"
 
 task :benchmark do
   @examples = [
@@ -14,19 +14,41 @@ task :benchmark do
     "在日本比linode还便宜一半的服务器啊"
   ]
   Benchmark.bm do |r|
-    r.report "100 times" do
+    puts "auto_correct!"
+    r.report " 100 times" do
+      100.times do 
+        @examples.sample.clone.auto_correct!
+      end
+    end
+    
+    r.report " 1000 times" do
+      1000.times do 
+        @examples.sample.clone.auto_correct!
+      end
+    end
+    
+    r.report " 10000 times" do
+      10000.times do 
+        @examples.sample.clone.auto_correct!
+      end
+    end
+    
+    puts ""
+    puts "auto_space!"
+    
+    r.report " 100 times" do
       100.times do 
         @examples.sample.clone.auto_space!
       end
     end
     
-    r.report "1000 times" do
+    r.report " 1000 times" do
       1000.times do 
         @examples.sample.clone.auto_space!
       end
     end
     
-    r.report "10000 times" do
+    r.report " 10000 times" do
       10000.times do 
         @examples.sample.clone.auto_space!
       end
