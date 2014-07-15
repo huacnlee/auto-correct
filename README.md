@@ -14,8 +14,7 @@ After
 [经验之谈] 转行做 Ruby 程序员的 8 个月
 ```
 
-- [![Gem Version](https://badge.fury.io/rb/auto-space.png)](https://rubygems.org/gems/auto-space)
-- [![Build
+[![Gem Version](https://badge.fury.io/rb/auto-space.png)](https://rubygems.org/gems/auto-space) [![Build
 Status](https://secure.travis-ci.org/huacnlee/auto-space.png?branch=master&.png)](http://travis-ci.org/huacnlee/auto-space)
 
 ## 使用说明
@@ -39,7 +38,7 @@ bootstrap control-group 对齐问
 
 ## 性能
 
-see Rakefile
+详见 Rakefile
 
 ```
 $ rake benchmark
