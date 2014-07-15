@@ -1,12 +1,24 @@
 # auto-space
 
-自动给中文英文之间加入合理的空格
+自动纠正中文英文混排是一些不够好的写法，主要是合理的在正确的位置增加空格。
+
+Before
+
+```
+[经验之谈]转行做Ruby程序员的8个月
+```
+
+After
+
+```
+[经验之谈] 转行做 Ruby 程序员的 8 个月
+```
 
 - [![Gem Version](https://badge.fury.io/rb/auto-space.png)](https://rubygems.org/gems/auto-space)
 - [![Build
 Status](https://secure.travis-ci.org/huacnlee/auto-space.png?branch=master&.png)](http://travis-ci.org/huacnlee/auto-space)
 
-## 例如
+## 使用说明
 
 ```irb
 irb> require 'auto-space'
@@ -25,7 +37,7 @@ irb> "bootstrap control-group对齐问题".auto_space!
 bootstrap control-group 对齐问
 ```
 
-## Benchmark
+## 性能
 
 see Rakefile
 
@@ -41,3 +53,11 @@ $ rake benchmark
 
 * 'Foo'的"Bar" -> 'Foo' 的 "Bar"
 * 什么,时候 -> 什么, 时候 -> 什么，时候
+
+## 应用案例
+
+* [Ruby China](http://ruby-china.org) - 目前整站的标题都做了自动转换处理。
+
+## 参考内容
+
+* [Chinese Copywriting Guidelines](https://github.com/sparanoid/chinese-copywriting-guidelines)
