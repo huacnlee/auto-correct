@@ -159,7 +159,6 @@ describe "AutoCorrect" do
     context "do not change domain / code" do
       it { "www.ruby-lang.org".auto_correct!.should == "www.ruby-lang.org" }
       it { "rails 4.1.0.rc1 rubber fails, foo.rails.root set to nil".auto_correct!.should == "Rails 4.1.0.rc1 rubber fails, foo.rails.root set to nil" }
-      it { "" }
     end
 
     context "samples" do

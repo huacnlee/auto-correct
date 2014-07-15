@@ -22,6 +22,7 @@ module AutoCorrect
     "sidekiq"       => "Sidekiq",
     "railscasts"    => "RailsCasts",
     "execjs"        => "ExecJS",
+    "turbolinks"    => "Turbolinks",
 
     # Python
 
@@ -29,6 +30,10 @@ module AutoCorrect
     "nodejs"        => "Node.js",
 
     # Go
+    
+    # PHP
+    "php"           => "PHP",
+    "pear"          => "Pear",
     
     # Cocoa
     "reactivecocoa" => "ReactiveCocoa",
@@ -43,6 +48,9 @@ module AutoCorrect
     "dsl"           => "DSL",
     "tdd"           => "TDD",
     "bdd"           => "BDD",
+    "cgi"           => "CGI",
+    "asp.net"       => "ASP.NET",
+    ".net"          => ".NET",
 
     # Sites
     "github"        => "GitHub",
