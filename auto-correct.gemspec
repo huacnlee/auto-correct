@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "auto-correct"
-  s.version     = "0.1.0"
+  s.version     = "0.1.0.pre0"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Luikore","Jason Lee"]
   s.email       = ["usurffx@gmail.com","huacnlee@gmail.com"]

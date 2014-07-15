@@ -168,6 +168,7 @@ describe "AutoCorrect" do
       it { "Gitlab怎么集成GitlabCI".auto_correct!.should == "GitLab 怎么集成 GitLab CI"}
       it { "Gitlab.com地址".auto_correct!.should == "Gitlab.com 地址"}
       it { "[经验之谈]转行做ruby程序员的8个月, mysql经验".auto_correct!.should == "[经验之谈] 转行做 Ruby 程序员的 8 个月, MySQL 经验" }
+      it { "vps上sessions不生效，但在本地的环境是ok的，why？".auto_correct!.should == "VPS 上 sessions 不生效，但在本地的环境是 ok 的，why？" }
     end
   end
 end

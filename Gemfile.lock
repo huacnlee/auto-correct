@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    auto-correct (0.0.4)
+    auto-correct (0.1.0.pre0)
       activesupport (> 3.0.0)
 
 GEM

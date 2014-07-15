@@ -98,6 +98,8 @@ module AutoCorrect
     "mac"           => "Mac",
     "api"           => "API",
     "wi-fi"         => "Wi-Fi",
-    "wifi"          => "Wi-Fi"
+    "wifi"          => "Wi-Fi",
+    "vps"           => "VPS",
+    "vpn"           => "VPN",
   }
 end
