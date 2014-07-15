@@ -14,8 +14,8 @@ After
 [经验之谈] 转行做 Ruby 程序员的 8 个月, MySQL 经验
 ```
 
-[![Gem Version](https://badge.fury.io/rb/auto-space.png)](https://rubygems.org/gems/auto-space) [![Build
-Status](https://secure.travis-ci.org/huacnlee/auto-space.png?branch=master&.png)](http://travis-ci.org/huacnlee/auto-space)
+[![Gem Version](https://badge.fury.io/rb/auto-correct.png)](https://rubygems.org/gems/auto-correct) [![Build
+Status](https://secure.travis-ci.org/huacnlee/auto-correct.png?branch=master&.png)](http://travis-ci.org/huacnlee/auto-correct)
 
 ## 使用说明
 
