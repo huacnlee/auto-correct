@@ -19,6 +19,18 @@ irb> "vps上sessions不生效，但在本地的环境是ok的，why？".auto_spa
 vps 上 sessions 不生效，但在本地的环境是 OK 的，why?
 irb> "bootstrap control-group对齐问题".auto_space!
 bootstrap control-group 对齐问
+
+
+## Benchmark
+
+see Rakefile
+
+```
+$ rake benchmark
+       user     system      total        real
+100 times  0.000000   0.000000   0.000000 (  0.002223)
+1000 times  0.030000   0.000000   0.030000 (  0.024711)
+10000 times  0.230000   0.000000   0.230000 (  0.240850)
 ```
 
 ## TODO
