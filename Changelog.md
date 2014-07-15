@@ -1,3 +1,7 @@
+## 0.1.0
+
+* 新增 auto_correct! 方法用于纠正名词大小写问题，同时 Gem 改名为 auto-correct
+
 ## 0.0.4
 
 * 修正中文单引号，双引号左右的空格，如：中文‘Ruby’和“Rails” -> 中文 ‘Ruby’ 和 “Rails” 

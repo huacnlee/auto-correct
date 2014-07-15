@@ -1,27 +1,26 @@
-# auto-space
+# auto-correct
 
-自动纠正中文英文混排是一些不够好的写法，主要是合理的在正确的位置增加空格。
+自动纠正中文英文混排是一些不够好的写法，纠正错误的名词大小写。
 
 Before
 
 ```
-[经验之谈]转行做Ruby程序员的8个月
+[经验之谈]转行做ruby程序员的8个月, mysql 经验
 ```
 
 After
 
 ```
-[经验之谈] 转行做 Ruby 程序员的 8 个月
+[经验之谈] 转行做 Ruby 程序员的 8 个月, MySQL 经验
 ```
 
-- [![Gem Version](https://badge.fury.io/rb/auto-space.png)](https://rubygems.org/gems/auto-space)
-- [![Build
+[![Gem Version](https://badge.fury.io/rb/auto-space.png)](https://rubygems.org/gems/auto-space) [![Build
 Status](https://secure.travis-ci.org/huacnlee/auto-space.png?branch=master&.png)](http://travis-ci.org/huacnlee/auto-space)
 
 ## 使用说明
 
 ```irb
-irb> require 'auto-space'
+irb> require 'auto-correct'
 true
 
 irb> "关于SSH连接的Permission denied(publickey).".auto_space!
@@ -39,7 +38,7 @@ bootstrap control-group 对齐问
 
 ## 性能
 
-see Rakefile
+详见 Rakefile
 
 ```
 $ rake benchmark

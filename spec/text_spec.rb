@@ -1,7 +1,7 @@
 # coding: utf-8
-require "auto-space"
+require "auto-correct"
 
-describe "AutoSpace" do
+describe "AutoCorrect" do
   let(:text) { "" }
   subject { text.auto_space! }
   context 'simple Chinese and English' do
@@ -78,19 +78,10 @@ describe "AutoSpace" do
     it {
       "创建一篇article，但是却爆了ActionDispatch::Cookies::CookieOverflow的异常".auto_space!.should == "创建一篇 article，但是却爆了 ActionDispatch::Cookies::CookieOverflow 的异常"
     }
-    it {
-      "Mac安装软件新方法：Homebrew-cask".auto_space!.should == "Mac 安装软件新方法：Homebrew-cask"
-    }
-    it {
-      "Mac安装软件新方法: Homebrew-cask".auto_space!.should == "Mac 安装软件新方法: Homebrew-cask"
-    }
-    it {
-      "Gitlab怎么集成GitlabCI.".auto_space!.should == "Gitlab 怎么集成 GitlabCI."
-    }
-    
-    it {
-      "Linode的$10/mo的VPS在怎么样？".auto_space!.should == "Linode 的 $10/mo 的 VPS 在怎么样？"
-    }
+    it { "Mac安装软件新方法：Homebrew-cask".auto_space!.should == "Mac 安装软件新方法：Homebrew-cask" }
+    it { "Mac安装软件新方法: Homebrew-cask".auto_space!.should == "Mac 安装软件新方法: Homebrew-cask" }
+    it { "Gitlab怎么集成GitlabCI.".auto_space!.should == "Gitlab 怎么集成 GitlabCI." }
+    it { "Linode的$10/mo的VPS在怎么样？".auto_space!.should == "Linode 的 $10/mo 的 VPS 在怎么样？" }
     it {
       "[成都]招聘3名Rails程序员".auto_space!.should == "[成都] 招聘 3 名 Rails 程序员"
       "注意[成都]招聘3名Rails程序员".auto_space!.should == "注意 [成都] 招聘 3 名 Rails 程序员"
@@ -105,7 +96,7 @@ describe "AutoSpace" do
     }
 
   end
-  
+
   context "+" do
     it {
       "Rspec+Capybara边学边用边分享1-Rspec".auto_space!.should == "Rspec+Capybara 边学边用边分享 1-Rspec"
@@ -130,12 +121,53 @@ describe "AutoSpace" do
     it { "12月22号开始出发".auto_space!.should == "12月22号开始出发" }
     it { "22号开始出发".auto_space!.should == "22号开始出发" }
   end
-  
+
   context 'when 日XX/年XX/月XX/号XX' do
     it { "五号的人物".auto_space!.should == "五号的人物" }
     it { "本月的活动".auto_space!.should == "本月的活动" }
     it { "今年就会出来".auto_space!.should == "今年就会出来" }
     it { "在日本比linode还便宜一半的服务器啊".auto_space!.should == "在日本比 linode 还便宜一半的服务器啊" }
     it { "明日大家都在这里".auto_space!.should == "明日大家都在这里" }
+  end
+
+  describe ".auto_correct!" do
+    context "between word" do
+      it { "mOngodb".auto_correct!.should == "MongoDB" }
+      it { " mongodb".auto_correct!.should == " MongoDB" }
+      it { " mongodb ".auto_correct!.should == " MongoDB " }
+      it { "的mongodb".auto_correct!.should == "的 MongoDB" }
+      it { "mongodb的".auto_correct!.should == "MongoDB 的" }
+    end
+    
+    context "all words" do
+      it "should word" do
+        AutoCorrect::DICTS.map do |key, val|
+          str = key.dup
+          str.auto_correct!.should == val
+        end
+      end
+    end
+
+    context "word in inside other word" do
+      it { "oruby".auto_correct!.should == "oruby" }
+    end
+
+    context "with -" do
+      it { "ruby-china社区".auto_correct!.should == "Ruby China 社区" }
+    end
+    
+    context "do not change domain / code" do
+      it { "www.ruby-lang.org".auto_correct!.should == "www.ruby-lang.org" }
+      it { "rails 4.1.0.rc1 rubber fails, foo.rails.root set to nil".auto_correct!.should == "Rails 4.1.0.rc1 rubber fails, foo.rails.root set to nil" }
+      it { "" }
+    end
+
+    context "samples" do
+      it { "OSX安装教程".auto_correct!.should == "OS X 安装教程" }
+      it { "据说ios 6将会在明日发布".auto_correct!.should == "据说 iOS 6 将会在明日发布" }
+      it { "Gitlab怎么集成GitlabCI".auto_correct!.should == "GitLab 怎么集成 GitLab CI"}
+      it { "Gitlab.com地址".auto_correct!.should == "Gitlab.com 地址"}
+      it { "[经验之谈]转行做ruby程序员的8个月, mysql经验".auto_correct!.should == "[经验之谈] 转行做 Ruby 程序员的 8 个月, MySQL 经验" }
+    end
   end
 end
