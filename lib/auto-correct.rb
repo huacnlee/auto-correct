@@ -26,7 +26,7 @@ class String
   def auto_correct!
     self.auto_space!
     
-    self.gsub! /([\d\p{Han}]|\s|^)([a-zA-Z\d\-\_\.]+)([\d\p{Han}]|\s|$)/u do
+    self.gsub! /([\d\p{Han}：:]|\s|^)([a-zA-Z\d\-\_\.]+)([\d\p{Han},，。；]|\s|$)/u do
       key = "#$2".downcase
       if AutoCorrect::DICTS.has_key?(key)
         ["#$1",AutoCorrect::DICTS[key],"#$3"].join("")

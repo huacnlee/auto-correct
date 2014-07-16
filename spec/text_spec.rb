@@ -168,6 +168,8 @@ describe "AutoCorrect" do
       it { "Gitlab.com地址".auto_correct!.should == "Gitlab.com 地址"}
       it { "[经验之谈]转行做ruby程序员的8个月, mysql经验".auto_correct!.should == "[经验之谈] 转行做 Ruby 程序员的 8 个月, MySQL 经验" }
       it { "vps上sessions不生效，但在本地的环境是ok的，why？".auto_correct!.should == "VPS 上 sessions 不生效，但在本地的环境是 ok 的，why？" }
+      it { "全新的ruby web框架：lotus".auto_correct!.should == "全新的 Ruby web 框架：Lotus" }
+      it { "grape写纯 api，选择哪个oauth gem好呢？".auto_correct!.should == "Grape 写纯 API，选择哪个 OAuth gem 好呢？" }
     end
   end
 end

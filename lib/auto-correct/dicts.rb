@@ -2,7 +2,9 @@ module AutoCorrect
   DICTS             = {
     # Ruby
     "ruby"          => "Ruby",
+    "mri"           => "MRI",
     "rails"         => "Rails",
+    "gem"           => "Gem",
     "rubygems"      => "RubyGems",
     "rubyonrails"   => "Ruby on Rails",
     "ror"           => "Ruby on Rails",
@@ -27,6 +29,7 @@ module AutoCorrect
     "rack"          => "Rack",
     "sinatra"       => "Sinatra",
     "lotus"         => "Lotus",
+    "grape"         => "Grape",
     "unicorn"       => "Unicorn",
     "thin"          => "Thin",
     "puma"          => "Puma",
@@ -47,8 +50,6 @@ module AutoCorrect
     "carrierwave"   => "CarrierWave",
     "paperclip"     => "PaperClip",
     "simpleform"    => "Simple Form",
-    "simple-form"   => "Simple Form",
-    "simple_form"   => "Simple Form",
     "kaminari"      => "Kaminari",
     "will_paginate" => "will_paginate",
     "minimagick"    => "MiniMagick",
@@ -88,6 +89,8 @@ module AutoCorrect
 
     # Programming
     "ssh"           => "SSH",
+    "web"           => "Web",
+    "api"           => "API",
     "css"           => "CSS",
     "html"          => "HTML",
     "json"          => "JSON",
@@ -199,7 +202,6 @@ module AutoCorrect
     "macbookpro"    => "MacBook Pro",
     "macbook"       => "MacBook",
     "rmbp"          => "rMBP",
-    "api"           => "API",
     "wi-fi"         => "Wi-Fi",
     "wifi"          => "Wi-Fi",
     "vps"           => "VPS",
