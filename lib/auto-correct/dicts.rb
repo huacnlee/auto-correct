@@ -4,6 +4,7 @@ module AutoCorrect
     "ruby"          => "Ruby",
     "rails"         => "Rails",
     "rubygems"      => "RubyGems",
+    "rubyonrails"   => "Ruby on Rails",
     "ror"           => "Ruby on Rails",
     "rubyconf"      => "RubyConf",
     "railsconf"     => "RailsConf",
@@ -19,15 +20,60 @@ module AutoCorrect
     "coffeescript"  => "CoffeeScript",
     "scss"          => "SCSS",
     "sass"          => "Sass",
-    "sidekiq"       => "Sidekiq",
     "railscasts"    => "RailsCasts",
     "execjs"        => "ExecJS",
+    "cocoapods"     => "CocoaPods",
+    "capybara"      => "Capybara",
+    "rack"          => "Rack",
+    "sinatra"       => "Sinatra",
+    "lotus"         => "Lotus",
+    "unicorn"       => "Unicorn",
+    "thin"          => "Thin",
+    "puma"          => "Puma",
+    "passenger"     => "Passenger",
+    "activerecord"  => "ActiveRecord",
+    "active-record" => "ActiveRecord",
+    "activemodal"   => "ActiveModel",
+    "activesupport" => "ActiveSupport",
+    "datamapper"    => "DataMapper",
+    "devise"        => "Devise",
+    "cancancan"     => "CanCanCan",
+    "resque"        => "Resque",
+    "sidekiq"       => "Sidekiq",
     "turbolinks"    => "Turbolinks",
-
+    "sprockets"     => "Sprockets",
+    "redcarpet"     => "Redcarpet",
+    "sunspot"       => "Sunspot",
+    "carrierwave"   => "CarrierWave",
+    "paperclip"     => "PaperClip",
+    "simpleform"    => "Simple Form",
+    "simple-form"   => "Simple Form",
+    "simple_form"   => "Simple Form",
+    "kaminari"      => "Kaminari",
+    "will_paginate" => "will_paginate",
+    "minimagick"    => "MiniMagick",
+    "rmagick"       => "RMagick",
+    "nokogiri"      => "Nokogiri",
+    "god"           => "God",
+    "eventmachine"  => "EventMachine",
+    "simplecov"     => "SimpleCov",
+    "brakeman"      => "Brakeman",
+    "activeadmin"   => "ActiveAdmin",
+    "railsadmin"    => "RailsAdmin",
+    "capistrano"    => "Capistrano",
+    "mina"          => "Mina",
+    "puppet"        => "Puppet",
+    "vagrant"       => "Vagrant",
+    "chef"          => "Chef",
+    "rubymotion"    => "RubyMotion",
+    "irb"           => "IRB",
+    "pry"           => "Pry",
+    
     # Python
 
     # Node.js
     "nodejs"        => "Node.js",
+    "npm"           => "NPM",
 
     # Go
     
@@ -37,11 +83,23 @@ module AutoCorrect
     
     # Cocoa
     "reactivecocoa" => "ReactiveCocoa",
+    
+    # Java 
 
     # Programming
     "ssh"           => "SSH",
     "css"           => "CSS",
     "html"          => "HTML",
+    "json"          => "JSON",
+    "jsonp"         => "JSONP",
+    "xml"           => "xml",
+    "yaml"          => "YAML",
+    "yml"           => "YAML",
+    "ini"           => "INI",
+    "csv"           => "CSV",
+    "soap"          => "SOAP",
+    "ajax"          => "Ajax",
+    "messagepack"   => "MessagePack",
     "javascript"    => "JavaScript",
     "js"            => "JS",
     "png"           => "PNG",
@@ -51,6 +109,13 @@ module AutoCorrect
     "cgi"           => "CGI",
     "asp.net"       => "ASP.NET",
     ".net"          => ".NET",
+    "rest"          => "REST",
+    "orm"           => "ORM",
+    "oauth"         => "OAuth",
+    "oauth2"        => "OAuth2",
+    "i18n"          => "I18N",
+    "markdown"      => "Markdown",
+
 
     # Sites
     "github"        => "GitHub",
@@ -72,6 +137,17 @@ module AutoCorrect
     "rethinkdb"     => "RethinkDB",
     "elasticsearch" => "Elasticsearch",
     "sphinx"        => "Sphinx",
+    
+    # System
+    "window"        => "Windows",
+    "linux"         => "Linux",
+    "mac"           => "Mac",
+    "osx"           => "OS X",
+    "ubuntu"        => "Ubuntu",
+    "rhel"          => "RHEL",
+    "centos"        => "CentOS",
+    "archlinux"     => "Arch Linux",
+    "redhat"        => "RedHat",
 
     # OpenSource Projects
     "gitlab"        => "GitLab",
@@ -85,8 +161,12 @@ module AutoCorrect
     "backbone"      => "Backbone",
     "seajs"         => "SeaJS",
     "imagemagick"   => "ImageMagick",
+    "fluentd"       => "Fluentd",
+    "ffmpeg"        => "FFMPEG",
     
     # Tools
+    "git"           => "Git",
+    "svn"           => "SVN",
     "vim"           => "VIM",
     "emacs"         => "Emacs",
     "textmate"      => "TextMate",
@@ -97,6 +177,17 @@ module AutoCorrect
     "safari"        => "Safari",
     "chrome"        => "Chrome",
     "ie"            => "IE",
+    "dash"          => "Dash",
+    "termal"        => "Termal",
+    "iterm"         => "iTerm",
+    "iterm2"        => "iTerm2",
+    "iwork"         => "iWork",
+    "iphoto"        => "iPhoto",
+    "ibook"         => "iBook",
+    "tweetbot"      => "TweetBot",
+    "sparrow"       => "Sparrow",
+    "photoshop"     => "Photoshop",
+    "office"        => "Office",
 
     # Misc
     "ios"           => "iOS",
@@ -104,10 +195,17 @@ module AutoCorrect
     "android"       => "Android",
     "osx"           => "OS X",
     "mac"           => "Mac",
+    "imac"          => "iMac",
+    "macbookpro"    => "MacBook Pro",
+    "macbook"       => "MacBook",
+    "rmbp"          => "rMBP",
     "api"           => "API",
     "wi-fi"         => "Wi-Fi",
     "wifi"          => "Wi-Fi",
     "vps"           => "VPS",
     "vpn"           => "VPN",
+    "arm"           => "ARM",
+    "cpu"           => "CPU",
+    
   }
 end
