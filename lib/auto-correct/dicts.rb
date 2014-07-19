@@ -83,7 +83,9 @@ module AutoCorrect
     "pear"          => "Pear",
     
     # Cocoa
+    "afnetworking"  => "AFNetworking",
     "reactivecocoa" => "ReactiveCocoa",
+    "three20"       => "Three20",
     
     # Java 
 
@@ -121,24 +123,34 @@ module AutoCorrect
 
 
     # Sites
+    "amazon"        => "Amazon",
+    "aws"           => "AWS",
+    "facebook"      => "Facebook",
     "github"        => "GitHub",
     "gist"          => "Gist",
     "ruby_china"    => "Ruby China",
     "ruby-china"    => "Ruby China",
     "rubychina"     => "Ruby China",
     "v2ex"          => "V2EX",
+    "hackernews"    => "Hacker News",
     "heroku"        => "Heroku",
     "stackoverflow" => "Stack Overflow",
     "stackexchange" => "StackExchange",
+    "twitter"       => "Twitter",
+    "youtube"       => "YouTube",
     
 
     # Databases
+    "dynamodb"      => "DynamoDB",
     "mysql"         => "MySQL",
     "postgresql"    => "PostgreSQL",
     "sqlite"        => "SQLite",
+    "memcached"     => "Memcached",
     "mongodb"       => "MongoDB",
+    "redis"         => "Redis",
     "rethinkdb"     => "RethinkDB",
     "elasticsearch" => "Elasticsearch",
+    "solr"          => "Solr",
     "sphinx"        => "Sphinx",
     
     # System
@@ -155,12 +167,13 @@ module AutoCorrect
     # OpenSource Projects
     "gitlab"        => "GitLab",
     "gitlabci"      => "GitLab CI",
-    "fontawsome"    => "FontAwsome",
+    "fontawesome"   => "Font Awesome",
     "bootstrap"     => "Bootstrap",
     "less"          => "Less",
     "jquery"        => "jQuery",
     "requirejs"     => "RequireJS",
     "underscore"    => "Underscore",
+    "angularjs"     => "AngularJS",
     "backbone"      => "Backbone",
     "seajs"         => "SeaJS",
     "imagemagick"   => "ImageMagick",
@@ -180,21 +193,28 @@ module AutoCorrect
     "safari"        => "Safari",
     "chrome"        => "Chrome",
     "ie"            => "IE",
+    "firefox"       => "Firefox",
     "dash"          => "Dash",
     "termal"        => "Termal",
     "iterm"         => "iTerm",
     "iterm2"        => "iTerm2",
     "iwork"         => "iWork",
+    "itunes"        => "iTunes",
     "iphoto"        => "iPhoto",
     "ibook"         => "iBook",
+    "imessage"      => "iMessage",
     "tweetbot"      => "TweetBot",
     "sparrow"       => "Sparrow",
     "photoshop"     => "Photoshop",
     "office"        => "Office",
+    "word"          => "Word",
+    "excel"         => "Excel",
+    "powerpoint"    => "PowerPoint",
 
     # Misc
     "ios"           => "iOS",
     "iphone"        => "iPhone",
+    "ipad"          => "iPad",
     "android"       => "Android",
     "osx"           => "OS X",
     "mac"           => "Mac",
