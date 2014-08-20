@@ -36,6 +36,34 @@ irb> "bootstrap control-group对齐问题".auto_correct!
 Bootstrap control-group 对齐问
 ```
 
+## ActiveModel 的 changed? 相关提示
+
+由于 auto_correct 是直接修改原始变量值的，你可能会遇到由于没有引发 `ActiveModel::Dirty` 的相关 callback 事件而导致下面这种场景 ActiveModel 不会将相关的字段写入到数据库。
+
+比如下面的情况：
+
+```ruby
+class Topic < ActiveRecord::Base
+  before_save do
+    self.title.auto_correct!
+  end
+end
+```
+
+正确的方式：
+
+```ruby
+class Topic < ActiveRecord::Base
+  before_save do
+    # 引发 ActiveModel::Dirty 的 change
+    self.title_will_change!
+    self.title.auto_correct!
+  end
+end
+```
+
+具体请参见 [ActiveModel::Dirty 的文档](http://api.rubyonrails.org/classes/ActiveModel/Dirty.html)
+
 ## 性能
 
 详见 Rakefile

@@ -1,5 +1,14 @@
 # coding: utf-8
 require "auto-correct"
+require "active_support/all"
+require "active_model"
+
+class User
+  include ActiveModel::Dirty
+  attr_accessor :name
+
+  define_attribute_methods :name
+end
 
 describe "AutoCorrect" do
   let(:text) { "" }
@@ -170,6 +179,18 @@ describe "AutoCorrect" do
       it { "vps上sessions不生效，但在本地的环境是ok的，why？".auto_correct!.should == "VPS 上 sessions 不生效，但在本地的环境是 ok 的，why？" }
       it { "全新的ruby web框架：lotus".auto_correct!.should == "全新的 Ruby web 框架：Lotus" }
       it { "grape写纯 api，选择哪个oauth gem好呢？".auto_correct!.should == "Grape 写纯 API，选择哪个 OAuth gem 好呢？" }
+    end
+    
+    context 'with ActiveModel field_changed?' do
+      it {
+        u = User.new
+        u.name = "foo的"
+        u.name_changed?.should == false
+        u.name_will_change!
+        u.name.auto_correct!.should == "foo 的"
+        u.name_change.should == ["foo的","foo 的"]
+        u.name_changed?.should == true
+      }
     end
   end
 end
