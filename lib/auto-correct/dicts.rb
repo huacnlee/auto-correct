@@ -131,6 +131,7 @@ module AutoCorrect
     "ruby_china"    => "Ruby China",
     "ruby-china"    => "Ruby China",
     "rubychina"     => "Ruby China",
+    "phphub"        => "PHPHub",
     "v2ex"          => "V2EX",
     "hackernews"    => "Hacker News",
     "heroku"        => "Heroku",
