@@ -69,7 +69,7 @@ module AutoCorrect
     "rubymotion"    => "RubyMotion",
     "irb"           => "IRB",
     "pry"           => "Pry",
-    
+
     # Python
 
     # Node.js
@@ -77,17 +77,17 @@ module AutoCorrect
     "npm"           => "NPM",
 
     # Go
-    
+
     # PHP
     "php"           => "PHP",
     "pear"          => "Pear",
-    
+
     # Cocoa
     "afnetworking"  => "AFNetworking",
     "reactivecocoa" => "ReactiveCocoa",
     "three20"       => "Three20",
-    
-    # Java 
+
+    # Java
 
     # Programming
     "ssh"           => "SSH",
@@ -121,7 +121,6 @@ module AutoCorrect
     "i18n"          => "I18N",
     "markdown"      => "Markdown",
 
-
     # Sites
     "amazon"        => "Amazon",
     "aws"           => "AWS",
@@ -138,7 +137,6 @@ module AutoCorrect
     "stackexchange" => "StackExchange",
     "twitter"       => "Twitter",
     "youtube"       => "YouTube",
-    
 
     # Databases
     "dynamodb"      => "DynamoDB",
@@ -152,7 +150,7 @@ module AutoCorrect
     "elasticsearch" => "Elasticsearch",
     "solr"          => "Solr",
     "sphinx"        => "Sphinx",
-    
+
     # System
     "window"        => "Windows",
     "linux"         => "Linux",
@@ -179,7 +177,7 @@ module AutoCorrect
     "imagemagick"   => "ImageMagick",
     "fluentd"       => "Fluentd",
     "ffmpeg"        => "FFMPEG",
-    
+
     # Tools
     "git"           => "Git",
     "svn"           => "SVN",
@@ -216,8 +214,6 @@ module AutoCorrect
     "iphone"        => "iPhone",
     "ipad"          => "iPad",
     "android"       => "Android",
-    "osx"           => "OS X",
-    "mac"           => "Mac",
     "imac"          => "iMac",
     "macbookpro"    => "MacBook Pro",
     "macbook"       => "MacBook",
@@ -228,6 +224,13 @@ module AutoCorrect
     "vpn"           => "VPN",
     "arm"           => "ARM",
     "cpu"           => "CPU",
-    
+
+  }
+
+  CONVERSION        = {
+    "【"            => "[",
+    "】"            => "]",
+    "（"            => "(",
+    "）"            => ")"
   }
 end
