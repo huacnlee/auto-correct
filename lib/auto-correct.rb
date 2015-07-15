@@ -10,22 +10,30 @@ class String
     self.gsub! /([a-zA-Z0-9+$’”\]\)@#!\/]|[\d[年月日]]{2,})((?![年月日号])\p{Han})/u do
       "#$1 #$2"
     end
-    
+
     # Fix () [] near the English and number
     self.gsub! /([a-zA-Z0-9]+)([\[\(‘“])/u do
       "#$1 #$2"
     end
-    
+
     self.gsub! /([\)\]’”])([a-zA-Z0-9]+)/u do
       "#$1 #$2"
     end
-    
+
     self
   end
-  
+
+  def auto_convert!(conversion = AutoCorrect::CONVERSION)
+    conversion.each do |key, value|
+      self.gsub!(key, value)
+    end
+
+    self
+  end
+
   def auto_correct!
     self.auto_space!
-    
+
     self.gsub! /([\d\p{Han}：:]|\s|^)([a-zA-Z\d\-\_\.]+)([\d\p{Han},，。；]|\s|$)/u do
       key = "#$2".downcase
       if AutoCorrect::DICTS.has_key?(key)
@@ -34,7 +42,7 @@ class String
         "#$1#$2#$3"
       end
     end
-    
+
     self
   end
 end

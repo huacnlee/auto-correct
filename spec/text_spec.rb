@@ -139,6 +139,18 @@ describe "AutoCorrect" do
     it { "明日大家都在这里".auto_space!.should == "明日大家都在这里" }
   end
 
+  describe ".auto_convert!" do
+    context "default conversion" do
+      it { "【北京】".auto_convert!.should == "[北京]" }
+      it { "（（北京））".auto_convert!.should == "((北京))" }
+    end
+
+    context "custom conversion" do
+      it { "[上海]".auto_convert!({ "[" => "【", "]" => "】" }).should == "【上海】" }
+      it { "(上海)".auto_convert!({ "(" => "（", ")" => "）" }).should == "（上海）" }
+    end
+  end
+
   describe ".auto_correct!" do
     context "between word" do
       it { "mOngodb".auto_correct!.should == "MongoDB" }
@@ -147,7 +159,7 @@ describe "AutoCorrect" do
       it { "的mongodb".auto_correct!.should == "的 MongoDB" }
       it { "mongodb的".auto_correct!.should == "MongoDB 的" }
     end
-    
+
     context "all words" do
       it "should word" do
         AutoCorrect::DICTS.map do |key, val|
@@ -164,7 +176,7 @@ describe "AutoCorrect" do
     context "with -" do
       it { "ruby-china社区".auto_correct!.should == "Ruby China 社区" }
     end
-    
+
     context "do not change domain / code" do
       it { "www.ruby-lang.org".auto_correct!.should == "www.ruby-lang.org" }
       it { "rails 4.1.0.rc1 rubber fails, foo.rails.root set to nil".auto_correct!.should == "Rails 4.1.0.rc1 rubber fails, foo.rails.root set to nil" }
@@ -180,7 +192,7 @@ describe "AutoCorrect" do
       it { "全新的ruby web框架：lotus".auto_correct!.should == "全新的 Ruby web 框架：Lotus" }
       it { "grape写纯 api，选择哪个oauth gem好呢？".auto_correct!.should == "Grape 写纯 API，选择哪个 OAuth gem 好呢？" }
     end
-    
+
     context 'with ActiveModel field_changed?' do
       it {
         u = User.new
