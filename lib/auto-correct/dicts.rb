@@ -216,8 +216,6 @@ module AutoCorrect
     "iphone"        => "iPhone",
     "ipad"          => "iPad",
     "android"       => "Android",
-    "osx"           => "OS X",
-    "mac"           => "Mac",
     "imac"          => "iMac",
     "macbookpro"    => "MacBook Pro",
     "macbook"       => "MacBook",
