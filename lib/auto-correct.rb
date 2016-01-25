@@ -1,3 +1,3 @@
 require 'auto-correct/string'
 
-String.include(AutoCorrect::String)
+String.send :include, AutoCorrect::String
