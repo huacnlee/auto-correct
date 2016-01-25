@@ -12,6 +12,4 @@ Gem::Specification.new do |s|
   s.description = %q{自动给中文英文之间加入合理的空格}
   s.files        = Dir.glob("lib/**/*") + %w(README.md)
   s.require_path = 'lib'
-  
-  s.add_dependency "activesupport", '> 3.0.0'
 end
