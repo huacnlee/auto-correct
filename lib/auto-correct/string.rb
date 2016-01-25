@@ -1,26 +1,27 @@
 # coding: utf-8
+require "yaml"
 require "auto-correct/dicts"
+Dir[File.join(File.dirname(__FILE__), 'auto_space/*.rb')].each { |f| require f }
 
 module AutoCorrect
   module String
     def auto_space!
-      self.gsub! /((?![年月日号])\p{Han})([a-zA-Z0-9+$@#\[\(\/‘“])/u do
-        "#$1 #$2"
-      end
+      stragories = YAML.load(File.read(File.expand_path('lib/auto-correct/enable.yml')))
+      enabled_stragories =
+        stragories.select do |key, value|
+          value['Enabled']
+        end.map do |key, value|
+          names = key.split('/')
+          constant = AutoCorrect
+          names.each do |name|
+            constant = constant.const_defined?(name) ? constant.const_get(name) : constant.const_missing(name)
+          end
+          constant
+        end
 
-      self.gsub! /([a-zA-Z0-9+$’”\]\)@#!\/]|[\d[年月日]]{2,})((?![年月日号])\p{Han})/u do
-        "#$1 #$2"
+      enabled_stragories.each do |klass|
+        klass.auto_correct!(self)
       end
-
-      # Fix () [] near the English and number
-      self.gsub! /([a-zA-Z0-9]+)([\[\(‘“])/u do
-        "#$1 #$2"
-      end
-
-      self.gsub! /([\)\]’”])([a-zA-Z0-9]+)/u do
-        "#$1 #$2"
-      end
-
       self
     end
 
@@ -38,5 +39,6 @@ module AutoCorrect
 
       self
     end
+
   end
 end

@@ -1,0 +1,11 @@
+AutoSpace/EnglishWord:
+  Enabled: true
+
+AutoSpace/Number:
+  Enabled: true
+
+AutoSpace/SpecialSymbol:
+  Enabled: true
+
+AutoSpace/Date:
+  Enabled: true
