@@ -16,5 +16,15 @@ describe "AutoCorrect/AutoSpace/FullwidthPunctuation" do
       let(:text) { "升级了 10.9 附遇到的 bug 。" }
       it { should eq "升级了 10.9 附遇到的 bug。" }
     end
+
+    context 'when have “”' do
+      let(:text) { "他说 “ 10.9 非常值得升级 ”" }
+      it { should eq "他说 “10.9 非常值得升级”" }
+    end
+
+    context 'when have ‘’' do
+      let(:text) { "他说 ‘ 10.9 非常值得升级 ’" }
+      it { should eq "他说 ‘10.9 非常值得升级’" }
+    end
   end
 end
