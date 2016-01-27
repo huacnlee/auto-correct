@@ -6,20 +6,7 @@ Dir[File.join(File.dirname(__FILE__), 'auto_space/*.rb')].each { |f| require f }
 module AutoCorrect
   module String
     def auto_space!
-      stragories = YAML.load(File.read(File.expand_path('lib/auto-correct/enable.yml')))
-      enabled_stragories =
-        stragories.select do |key, value|
-          value['Enabled']
-        end.map do |key, value|
-          names = key.split('/')
-          constant = AutoCorrect
-          names.each do |name|
-            constant = constant.const_defined?(name) ? constant.const_get(name) : constant.const_missing(name)
-          end
-          constant
-        end
-
-      enabled_stragories.each do |klass|
+      AutoCorrect.config.auto_space_stragories.each do |klass|
         klass.auto_correct!(self)
       end
       self
