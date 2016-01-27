@@ -6,7 +6,8 @@ Dir[File.join(File.dirname(__FILE__), 'auto_space/*.rb')].each { |f| require f }
 module AutoCorrect
   module String
     def auto_space!
-      AutoCorrect.config.auto_space_stragories.each do |klass|
+      stragories = AutoCorrect.config.auto_space_stragories || []
+      stragories.each do |klass|
         klass.auto_correct!(self)
       end
       self

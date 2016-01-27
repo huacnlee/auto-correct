@@ -36,37 +36,6 @@ irb> "bootstrap control-group对齐问题".auto_correct!
 Bootstrap control-group 对齐问
 ```
 
-## 配置
-
-大多数情况，你不需要任何配置，如果你需要自定义，可以参考：
-
-默认策略：
-
-AutoCorrect::AutoSpace::EnglishWord
-AutoCorrect::AutoSpace::Number
-AutoCorrect::AutoSpace::SpecialSymbol
-AutoCorrect::AutoSpace::Date
-
-其它策略：
-
-AutoCorrect::AutoSpace::FullwidthPunctuation
-
-
-如果你想自定义策略：
-
-```ruby
-Class NewStragory < AutoCorrect::AutoSpace::Base
-  between /Ruby/, /China/
-end
-
-AutoCorrect.configure do |config|
-  config.auto_space_stragories += [NewStragory]
-end
-
-"RubyChina 是最好的 Ruby 中文社区".auto_correct!  #=> "Ruby China 是最好的 Ruby 中文社区"
-```
-
-
 ## ActiveModel 的 changed? 相关提示
 
 由于 auto_correct 是直接修改原始变量值的，你可能会遇到由于没有引发 `ActiveModel::Dirty` 的相关 callback 事件而导致下面这种场景 ActiveModel 不会将相关的字段写入到数据库。
