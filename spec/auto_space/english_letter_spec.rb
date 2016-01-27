@@ -1,10 +1,10 @@
 # coding: utf-8
-require "auto-correct/auto_space/english_word"
+require "auto-correct/auto_space/english_letter"
 
-describe "AutoCorrect/AutoSpace/EnglishWord" do
+describe "AutoCorrect/AutoSpace/EnglishLetter" do
 
   let(:text) { "" }
-  subject { AutoCorrect::AutoSpace::EnglishWord.auto_correct!(text) }
+  subject { AutoCorrect::AutoSpace::EnglishLetter.auto_correct!(text) }
 
   context 'simple Chinese and English' do
     let(:text) { "部署到heroku有问题网页不能显示" }

@@ -4,7 +4,7 @@ module AutoCorrect
 
     def initialize
       @auto_space_stragories = [
-        AutoCorrect::AutoSpace::EnglishWord,
+        AutoCorrect::AutoSpace::EnglishLetter,
         AutoCorrect::AutoSpace::Number,
         AutoCorrect::AutoSpace::SpecialSymbol,
         AutoCorrect::AutoSpace::Date

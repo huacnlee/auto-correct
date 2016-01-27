@@ -192,20 +192,5 @@ describe "AutoCorrect" do
         u.name_changed?.should == true
       }
     end
-
-    context 'Config New Stragory' do
-      class NewStragory < AutoCorrect::AutoSpace::Base
-        between /Ruby/, /China/
-      end
-
-      before do
-        AutoCorrect.configure do |config|
-          config.auto_space_stragories += [NewStragory]
-        end
-      end
-
-      it { "RubyChina 是最好的 Ruby 中文社区".auto_correct!.should == "Ruby China 是最好的 Ruby 中文社区" }
-
-    end
   end
 end
