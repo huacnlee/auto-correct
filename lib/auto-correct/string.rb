@@ -1,6 +1,5 @@
 # coding: utf-8
-require "yaml"
-require "auto-correct/dicts"
+require "auto-correct/noun"
 Dir[File.join(File.dirname(__FILE__), 'auto_space/*.rb')].each { |f| require f }
 
 module AutoCorrect
@@ -16,14 +15,7 @@ module AutoCorrect
     def auto_correct!
       self.auto_space!
 
-      self.gsub! /([\d\p{Han}：:]|\s|^)([a-zA-Z\d\-\_\.]+)([\d\p{Han},，。；]|\s|$)/u do
-        key = "#$2".downcase
-        if AutoCorrect::DICTS.has_key?(key)
-          ["#$1",AutoCorrect::DICTS[key],"#$3"].join("")
-        else
-          "#$1#$2#$3"
-        end
-      end
+      AutoCorrect::Noun.auto_correct!(self)
 
       self
     end
