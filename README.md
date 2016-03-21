@@ -15,7 +15,7 @@ After
 ```
 
 [![Gem Version](https://badge.fury.io/rb/auto-correct.svg)](https://rubygems.org/gems/auto-correct) [![Build
-Status](https://secure.travis-ci.org/huacnlee/auto-correct.svg?branch=master&.png)](http://travis-ci.org/huacnlee/auto-correct) [![Code Climate](https://codeclimate.com/github/huacnlee/auto-correct/badges/gpa.svg)](https://codeclimate.com/github/huacnlee/auto-correct)
+Status](https://api.travis-ci.org/huacnlee/auto-correct.svg?branch=master&.svg)](http://travis-ci.org/huacnlee/auto-correct) [![Code Climate](https://codeclimate.com/github/huacnlee/auto-correct/badges/gpa.svg)](https://codeclimate.com/github/huacnlee/auto-correct)
 
 ## 使用说明
 
