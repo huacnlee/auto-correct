@@ -1,9 +1,10 @@
-# coding: utf-8
 $:.push File.expand_path("../lib", __FILE__)
+
+require 'auto-correct'
 
 Gem::Specification.new do |s|
   s.name        = "auto-correct"
-  s.version     = "0.1.1"
+  s.version     = AutoCorrect::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Luikore","Jason Lee"]
   s.email       = ["usurffx@gmail.com","huacnlee@gmail.com"]
