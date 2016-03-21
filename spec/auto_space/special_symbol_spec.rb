@@ -46,4 +46,9 @@ describe "AutoCorrect/AutoSpace/SpecialSymbol" do
     let(:text) { "http://sourceforge.net/解禁了" }
     it { should eq "http://sourceforge.net/ 解禁了" }
   end
+
+  context "when English has it's" do
+    let(:text) { "without looking like it’s been marked up with tags or formatting instructions." }
+    it { should eq "without looking like it’s been marked up with tags or formatting instructions." }
+  end
 end
