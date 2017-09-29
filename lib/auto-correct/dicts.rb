@@ -154,7 +154,7 @@ module AutoCorrect
     "sphinx"        => "Sphinx",
     
     # System
-    "window"        => "Windows",
+    "windows"        => "Windows",
     "linux"         => "Linux",
     "mac"           => "Mac",
     "osx"           => "OS X",
