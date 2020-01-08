@@ -82,6 +82,10 @@ auto_space!
  10000 times  0.210000   0.000000   0.210000 (  0.221530)
 ```
 
+## 其他实现
+
+- [go-autospace](https://github.com/huacnlee/go-autospace) - Go 版本实现
+
 ## TODO
 
 * 'Foo'的"Bar" -> 'Foo' 的 "Bar"
