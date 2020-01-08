@@ -84,7 +84,7 @@ auto_space!
 
 ## 其他实现
 
-- [go-autospace](https://github.com/huacnlee/go-autospace) - Go 版本实现
+- [go-auto-correct](https://github.com/huacnlee/go-auto-correct) - Go 版本实现
 
 ## TODO
 
