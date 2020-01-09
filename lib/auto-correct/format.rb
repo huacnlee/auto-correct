@@ -1,4 +1,5 @@
 class AutoCorrect
+  # rubocop:disable Style/StringLiterals
   # EnglishLetter
   rule '\p{Han}', '[0-9a-zA-Z]', space: true, reverse: true
 

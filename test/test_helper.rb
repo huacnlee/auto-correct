@@ -9,7 +9,7 @@ class ActiveSupport::TestCase
   end
 
   def load_file(fname)
-    File.open(Rails.root.join("test", "fixtures", fname))
+    File.open(File.join(__dir__, "fixtures", fname))
   end
 
   def assert_html_equal(excepted, html)
