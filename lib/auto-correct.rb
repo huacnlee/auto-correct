@@ -1,5 +1,7 @@
-require 'auto-correct/configuration'
-require 'auto-correct/string'
-require 'auto-correct/version'
+require "auto-correct/strategery"
+require "auto-correct/base"
+require "auto-correct/format"
+require "auto-correct/version"
 
-String.send :include, AutoCorrect::String
+class AutoCorrect
+end

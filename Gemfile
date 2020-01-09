@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 gemspec
-gem 'rspec'
-gem 'activesupport'
-gem 'activemodel'
+gem "rake"
+gem "activesupport"
+gem "minitest"
