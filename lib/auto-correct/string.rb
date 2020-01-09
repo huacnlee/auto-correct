@@ -1,24 +1,13 @@
-# coding: utf-8
-require "auto-correct/noun"
-Dir[File.join(File.dirname(__FILE__), 'auto_space/*.rb')].each { |f| require f }
-
-module AutoCorrect
+class AutoCorrect
   module String
     def auto_space!
-      stragories = AutoCorrect::Configuration.new.auto_space_stragories || []
-      stragories.each do |klass|
-        klass.auto_correct!(self)
-      end
-      self
+      ActiveSupport::Deprecation.warn("String.auto_space! is deprecated and will be removed in auto-corrrect 1.0, please use AutoCorrect.format instead.")
+      self.sub!(self, AutoCorrect.format(self))
     end
 
     def auto_correct!
-      self.auto_space!
-
-      AutoCorrect::Noun.auto_correct!(self)
-
-      self
+      ActiveSupport::Deprecation.warn("String.auto_correct! is deprecated and will be removed in auto-corrrect 1.0, please use AutoCorrect.format instead.")
+      self.sub!(self, AutoCorrect.format(self))
     end
-
   end
 end
