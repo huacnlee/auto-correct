@@ -1,10 +1,11 @@
-1.0.0
+0.2.0
 -----------
 
 - 重新按照 [go-auto-correct](https://github.com/huacnlee/go-auto-correct) 的方式实现，完全放弃之前的 API 设计。
 - 去掉名词纠正的方法。
 - 实现正确的中英文空格格式化方式；
 - 实现 HTML 格式化方法;
+- 废弃字符串 `auto_space!`, `auto_correct!` 方法，请用 `AutoCorrect.format`。
 
 0.1.0
 ----------
