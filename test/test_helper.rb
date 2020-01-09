@@ -1,5 +1,6 @@
 require "minitest/autorun"
 require "active_support"
+require "auto-correct"
 
 Minitest.backtrace_filter = Minitest::BacktraceFilter.new
 

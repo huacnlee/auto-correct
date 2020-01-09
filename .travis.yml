@@ -1,8 +1,6 @@
 language: ruby
-
 rvm:
-  - 2.5.0
-  - 2.6.5
-
-before_install: gem install bundler
-script: bundle exec rake test
+  - 2.6.3
+before_script: bundle install
+script:
+  - bundle exec rake test
