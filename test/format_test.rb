@@ -18,6 +18,7 @@ class FormatTest < ActiveSupport::TestCase
       "without looking like it’s been marked up with tags or formatting instructions.": "without looking like it’s been marked up with tags or formatting instructions.",
       "隔夜SHIBOR报1.5530%，上涨33.80个基点。7天SHIBOR报2.3200%，上涨6.10个基点。3个月SHIBOR报2.8810%，下降1.80个": "隔夜 SHIBOR 报 1.5530%，上涨 33.80 个基点。7 天 SHIBOR 报 2.3200%，上涨 6.10 个基点。3 个月 SHIBOR 报 2.8810%，下降 1.80 个",
       "野村：重申吉利汽车(00175)“买入”评级 上调目标价至17.9港元":                                              "野村：重申吉利汽车 (00175)“买入” 评级 上调目标价至 17.9 港元",
+      "小米集团-W 调整目标价为13.5港币": "小米集团-W 调整目标价为 13.5 港币",
     }
 
     assert_format_cases(cases)
