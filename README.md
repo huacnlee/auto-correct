@@ -18,6 +18,8 @@ Status](https://api.travis-ci.org/huacnlee/auto-correct.svg?branch=master&.svg)]
 - Auto add spacings between Chinese and English words.
 - HTML content support.
 
+[Examples](https://github.com/huacnlee/auto-correct/blob/master/test/format_test.rb)
+
 ## Usage
 
 `AutoCorrect.format` method for plain text.
