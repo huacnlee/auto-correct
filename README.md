@@ -2,7 +2,7 @@
 
 Automatically add spaces between Chinese and English words.
 
-自动纠正中文英文混排是一些不够好的写法，纠正错误的名词大小写。
+中文英文混排自动纠正补充空格，此方式已在 Ruby China 使用多年，支持 HTML 处理。
 
 [![Gem Version](https://badge.fury.io/rb/auto-correct.svg)](https://rubygems.org/gems/auto-correct) [![Build
 Status](https://api.travis-ci.org/huacnlee/auto-correct.svg?branch=master&.svg)](http://travis-ci.org/huacnlee/auto-correct) [![Code Climate](https://codeclimate.com/github/huacnlee/auto-correct/badges/gpa.svg)](https://codeclimate.com/github/huacnlee/auto-correct)
@@ -47,10 +47,9 @@ AutoCorrect.format_html("<div><p>长桥LongBridge App下载</p><p>最新版本1.
 
 TODO
 
-
 ## Use cases
 
-* [Ruby China](http://ruby-china.org) - 目前整站的标题都做了自动转换处理。
+* [Ruby China](https://ruby-china.org) - 目前整站的标题都做了自动转换处理。
 
 ## Links
 
