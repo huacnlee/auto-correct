@@ -5,7 +5,7 @@ Automatically add spaces between Chinese and English words.
 中文英文混排自动纠正补充空格，此方式已在 Ruby China 使用多年，支持 HTML 处理。
 
 [![Gem Version](https://badge.fury.io/rb/auto-correct.svg)](https://rubygems.org/gems/auto-correct) [![Build
-Status](https://api.travis-ci.org/huacnlee/auto-correct.svg?branch=master&.svg)](http://travis-ci.org/huacnlee/auto-correct) [![Code Climate](https://codeclimate.com/github/huacnlee/auto-correct/badges/gpa.svg)](https://codeclimate.com/github/huacnlee/auto-correct)
+Status](https://api.travis-ci.org/huacnlee/auto-correct.svg?branch=master&.svg)](http://travis-ci.org/huacnlee/auto-correct)
 
 
 ## Other implements
@@ -23,17 +23,17 @@ Status](https://api.travis-ci.org/huacnlee/auto-correct.svg?branch=master&.svg)]
 `AutoCorrect.format` method for plain text.
 
 ```ruby
-AutoCorrect.format("关于ssh连接的Permission denied(publickey).")
-# => "关于 SSH 连接的 Permission denied (publickey)."
+AutoCorrect.format("那里找到Ruby China App下载地址")
+# => "那里找到 Ruby China App 下载地址"
 
-AutoCorrect.format("怎样追踪一个repo的新feature 和进展呢?")
-# => "怎样追踪一个 repo 的新 feature 和进展呢?"
+AutoCorrect.format("Ruby 2.7版本第1次发布")
+# => "Ruby 2.7 版本第 1 次发布"
 
-AutoCorrect.format("vps上sessions不生效，但在本地的环境是ok的，why？")
-# => "VPS 上 sessions 不生效，但在本地的环境是 OK 的，why?"
+AutoCorrect.format("于3月10日开始")
+# => "于 3 月 10 日开始"
 
-AutoCorrect.format("bootstrap control-group对齐问题")
-# => "Bootstrap control-group 对齐问"
+AutoCorrect.format("包装日期为2013年3月10日")
+# => "包装日期为2013年3月10日"
 ```
 
 `AutoCorrect.format_html` method for HTML content.
