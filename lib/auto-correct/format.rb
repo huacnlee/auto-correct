@@ -4,7 +4,7 @@ class AutoCorrect
   rule '\p{Han}', '[0-9a-zA-Z]', space: true, reverse: true
 
   # SpecialSymbol
-  rule '\p{Han}', '[\|+$@#]', space: true, reverse: true
+  rule '\p{Han}', '[\|+$@#*]', space: true, reverse: true
   rule '\p{Han}', '[\[\(‘“]', space: true
   rule '[’”\]\)!%]', '\p{Han}', space: true
   rule '[”\]\)!]', '[a-zA-Z0-9]+', space: true
