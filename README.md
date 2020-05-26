@@ -10,8 +10,9 @@ Status](https://api.travis-ci.org/huacnlee/auto-correct.svg?branch=master&.svg)]
 
 ## Other implements
 
-- [auto-correct](https://github.com/huacnlee/auto-correct) - Ruby
-- [go-auto-correct](https://github.com/huacnlee/go-auto-correct) - Go
+- Ruby - [auto-correct](https://github.com/huacnlee/auto-correct).
+- Go - [go-auto-correct](https://github.com/huacnlee/go-auto-correct).
+- Rust - [auto-correct.rs](https://github.com/huacnlee/auto-correct.rs).
 
 ## Features
 
