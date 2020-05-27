@@ -1,21 +1,21 @@
 class AutoCorrect
   # rubocop:disable Style/StringLiterals
   # EnglishLetter
-  rule '\p{Han}', '[0-9a-zA-Z]', space: true, reverse: true
+  rule '\p{Han}|\p{Hangul}|\p{Hanunoo}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo}', '[0-9a-zA-Z]', space: true, reverse: true
 
   # SpecialSymbol
-  rule '\p{Han}', '[\|+$@#*]', space: true, reverse: true
-  rule '\p{Han}', '[\[\(‘“]', space: true
-  rule '[’”\]\)!%]', '\p{Han}', space: true
+  rule '\p{Han}|\p{Hangul}|\p{Hanunoo}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo}', '[\|+$@#*]', space: true, reverse: true
+  rule '\p{Han}|\p{Hangul}|\p{Hanunoo}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo}', '[\[\(‘“]', space: true
+  rule '[’”\]\)!%]', '\p{Han}|\p{Hangul}|\p{Hanunoo}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo}', space: true
   rule '[”\]\)!]', '[a-zA-Z0-9]+', space: true
 
   # FullwidthPunctuation
-  rule '[\w\p{Han}]', '[，。！？：；」》】”’]', reverse: true
-  rule '[‘“【「《]', '[\w\p{Han}]', reverse: true
+  rule '[\w\p{Han}|\p{Hangul}|\p{Hanunoo}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo}]', '[，。！？：；」》】”’]', reverse: true
+  rule '[‘“【「《]', '[\w\p{Han}|\p{Hangul}|\p{Hanunoo}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo}]', reverse: true
 
   class << self
     FULLDATE_RE = /[\s]{0,}\d+[\s]{0,}年[\s]{0,}\d+[\s]{0,}月[\s]{0,}\d+[\s]{0,}[日号][\s]{0,}/u
-    DASH_HAN_RE = /([\p{Han}）】」》”’])([\-]+)([\p{Han}（【「《“‘])/
+    DASH_HAN_RE = /([\p{Han}|\p{Hangul}|\p{Hanunoo}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo}）】」》”’])([\-]+)([\p{Han}|\p{Hangul}|\p{Hanunoo}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo}（【「《“‘])/
     LEFT_QUOTE_RE = /\s([（【「《])/
     RIGHT_QUOTE_RE = /([）】」》])\s/
 
