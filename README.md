@@ -1,8 +1,8 @@
 # auto-correct
 
-Automatically add spaces between Chinese and English words.
+Automatically add whitespace between CJK (Chinese, Japanese, Korean) and half-width characters (alphabetical letters, numerical digits and symbols).
 
-中文英文混排自动纠正补充空格，此方式已在 Ruby China 使用多年，支持 HTML 处理。
+中文、日语、韩语 + 英文混排自动纠正补充空格，此方式已在 Ruby China 使用多年，支持 HTML 处理。
 
 [![Gem Version](https://badge.fury.io/rb/auto-correct.svg)](https://rubygems.org/gems/auto-correct) [![Build
 Status](https://api.travis-ci.org/huacnlee/auto-correct.svg?branch=master&.svg)](http://travis-ci.org/huacnlee/auto-correct)
@@ -16,7 +16,7 @@ Status](https://api.travis-ci.org/huacnlee/auto-correct.svg?branch=master&.svg)]
 
 ## Features
 
-- Auto add spacings between Chinese and English words.
+- Auto add spacings between CJK (Chinese) and English words.
 - HTML content support.
 
 [Examples](https://github.com/huacnlee/auto-correct/blob/master/test/format_test.rb)
@@ -37,6 +37,15 @@ AutoCorrect.format("于3月10日开始")
 
 AutoCorrect.format("包装日期为2013年3月10日")
 # => "包装日期为2013年3月10日"
+
+AutoCorrect.format("生产环境中使用Ruby")
+# => "生产环境中使用 Ruby"
+
+AutoCorrect.format("本番環境でRubyを使用する")
+# => "本番環境で Ruby を使用する"
+
+AutoCorrect.format("프로덕션환경에서Ruby사용")
+# => "프로덕션환경에서 Ruby 사용"
 ```
 
 `AutoCorrect.format_html` method for HTML content.

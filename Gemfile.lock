@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    auto-correct (0.2.2)
+    auto-correct (0.3.0)
       nokogiri (>= 1.4)
 
 GEM
