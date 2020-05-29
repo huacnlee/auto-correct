@@ -61,12 +61,28 @@ Run `rake bench` to test:
 
 ```
 Warming up --------------------------------------
-              format     4.592k i/100ms
-         format_html   727.000  i/100ms
+     format 50 chars     1.886k i/100ms
+    format 100 chars     1.060k i/100ms
+    format 400 chars   342.000  i/100ms
+         format_html    85.000  i/100ms
 Calculating -------------------------------------
-              format     44.763k (± 3.8%) i/s -    225.008k in   5.034683s
-         format_html      7.292k (± 3.1%) i/s -     37.077k in   5.089301s
+     format 50 chars     18.842k (± 1.5%) i/s -     94.300k in   5.005815s
+    format 100 chars     10.357k (± 1.8%) i/s -     51.940k in   5.016770s
+    format 400 chars      3.336k (± 2.2%) i/s -     16.758k in   5.026230s
+         format_html    839.761  (± 2.1%) i/s -      4.250k in   5.063225s
 ```
+
+| Total chars | Duration |
+| ----- | ------- |
+| 50  | 0.33 ms |
+| 100  | 0.60 ms |
+| 400  | 2 ms |
+
+### FormatHTML
+
+| Total chars | Duration |
+| ----- | ------- |
+| 2K  | 7 ms |
 
 ## Use cases
 
