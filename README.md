@@ -57,7 +57,16 @@ AutoCorrect.format_html("<div><p>长桥LongBridge App下载</p><p>最新版本1.
 
 ## Benchmark
 
-TODO
+Run `rake bench` to test:
+
+```
+Warming up --------------------------------------
+              format     4.592k i/100ms
+         format_html   727.000  i/100ms
+Calculating -------------------------------------
+              format     44.763k (± 3.8%) i/s -    225.008k in   5.034683s
+         format_html      7.292k (± 3.1%) i/s -     37.077k in   5.089301s
+```
 
 ## Use cases
 

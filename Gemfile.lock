@@ -13,6 +13,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2)
+    benchmark-ips (2.8.2)
     concurrent-ruby (1.1.5)
     i18n (1.8.0)
       concurrent-ruby (~> 1.0)
@@ -32,6 +33,7 @@ PLATFORMS
 DEPENDENCIES
   activesupport
   auto-correct!
+  benchmark-ips
   minitest
   rake
 

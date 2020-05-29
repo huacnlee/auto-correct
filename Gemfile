@@ -3,3 +3,4 @@ gemspec
 gem "rake"
 gem "activesupport"
 gem "minitest"
+gem "benchmark-ips"
