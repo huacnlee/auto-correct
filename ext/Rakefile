@@ -1,0 +1,6 @@
+require "thermite/tasks"
+
+rust_path = File.expand_path("../../", __FILE__)
+root = File.expand_path("../../", __FILE__)
+Thermite::Tasks.new(cargo_project_path: rust_path, ruby_project_path: root)
+task default: %w(thermite:build)

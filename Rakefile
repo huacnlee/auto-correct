@@ -9,6 +9,9 @@ end
 require "bundler/gem_tasks"
 require "rake/testtask"
 require "ffi"
+require "thermite/tasks"
+
+Thermite::Tasks.new
 
 Rake::TestTask.new(:test) do |t|
   t.libs << "test"
@@ -16,18 +19,9 @@ Rake::TestTask.new(:test) do |t|
   t.test_files = FileList["test/**/*_test.rb"]
 end
 
-task :rust_build do
-  `cargo rustc --release`
-  `mv -f ./target/release/libautocorrect.#{::FFI::Platform::LIBSUFFIX} ./lib/auto-correct/libautocorrect.#{::FFI::Platform::LIBSUFFIX}`
-end
-
-task :rust_clean do
-  `cargo clean`
-  `rm -f ./lib/auto-correct/libautocorrect.#{::FFI::Platform::LIBSUFFIX}`
-end
-
-task build: :rust_build
-task clean: :rust_clean
+task build: ["thermite:build"]
+task clean: ["thermite:clean"]
+task test: ["thermite:build", "thermite:test"]
 task default: :test
 
 task :bench do
