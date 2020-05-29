@@ -21,7 +21,7 @@ class AutoCorrect
     LEFT_QUOTE_RE = /\s([（【「《])/
     RIGHT_QUOTE_RE = /([）】」》])\s/
 
-    def format(str)
+    def ruby_format(str)
       out = str
       self.strategies.each do |s|
         out = s.format(out)

@@ -1,0 +1,19 @@
+[package]
+name = "autocorrect"
+version = "0.2.0"
+authors = ["Jason Lee <huacnlee@gmail.com>"]
+edition = "2018"
+description = "Automatically add whitespace between Chinese and half-width characters (alphabetical letters, numerical digits and symbols)."
+homepage = "https://github.com/huacnlee/auto-correct.rs"
+repository = "https://github.com/huacnlee/auto-correct.rs"
+license = "MIT"
+keywords = ["auto-correct", "fmt", "format", "spacing"]
+readme = "README.md"
+
+[lib]
+name = "autocorrect"
+crate-type=["cdylib"]
+
+[dependencies]
+libc = "0.2.71"
+autocorrect = "*"

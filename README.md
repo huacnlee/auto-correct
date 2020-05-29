@@ -18,6 +18,7 @@ Status](https://api.travis-ci.org/huacnlee/auto-correct.svg?branch=master&.svg)]
 
 - Auto add spacings between CJK (Chinese) and English words.
 - HTML content support.
+- Rust implement for performance.
 
 [Examples](https://github.com/huacnlee/auto-correct/blob/master/test/format_test.rb)
 
@@ -61,28 +62,28 @@ Run `rake bench` to test:
 
 ```
 Warming up --------------------------------------
-     format 50 chars     1.886k i/100ms
-    format 100 chars     1.060k i/100ms
-    format 400 chars   342.000  i/100ms
-         format_html    85.000  i/100ms
+     format 50 chars     6.698k i/100ms
+    format 100 chars     4.657k i/100ms
+    format 400 chars     1.862k i/100ms
+         format_html   154.000  i/100ms
 Calculating -------------------------------------
-     format 50 chars     18.842k (± 1.5%) i/s -     94.300k in   5.005815s
-    format 100 chars     10.357k (± 1.8%) i/s -     51.940k in   5.016770s
-    format 400 chars      3.336k (± 2.2%) i/s -     16.758k in   5.026230s
-         format_html    839.761  (± 2.1%) i/s -      4.250k in   5.063225s
+     format 50 chars     64.210k (± 4.7%) i/s -    321.504k in   5.018656s
+    format 100 chars     45.870k (± 3.5%) i/s -    232.850k in   5.083049s
+    format 400 chars     19.681k (± 2.5%) i/s -     98.686k in   5.017752s
+         format_html      1.518k (± 6.1%) i/s -      7.700k in   5.093069s
 ```
 
 | Total chars | Duration |
 | ----- | ------- |
-| 50  | 0.33 ms |
-| 100  | 0.60 ms |
-| 400  | 2 ms |
+| 50  | 0.093 ms |
+| 100  | 0.131 ms |
+| 400  | 0.3 ms |
 
 ### FormatHTML
 
 | Total chars | Duration |
 | ----- | ------- |
-| 2K  | 7 ms |
+| 2K  | 4 ms |
 
 ## Use cases
 

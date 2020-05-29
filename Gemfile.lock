@@ -1,7 +1,8 @@
 PATH
   remote: .
   specs:
-    auto-correct (0.3.0)
+    auto-correct (0.4.0)
+      ffi
       nokogiri (>= 1.4)
 
 GEM
@@ -15,6 +16,7 @@ GEM
       zeitwerk (~> 2.2)
     benchmark-ips (2.8.2)
     concurrent-ruby (1.1.5)
+    ffi (1.12.2)
     i18n (1.8.0)
       concurrent-ruby (~> 1.0)
     mini_portile2 (2.4.0)
