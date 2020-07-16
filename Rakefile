@@ -17,6 +17,23 @@ end
 
 task default: :test
 
+require "./lib/auto-correct"
+
+task :leak do
+  str = "【野村：重申吉利汽车(00175)“买入”评级 上调目标价至17.9港元】智通财经APP获悉，野村发布报告称"
+  a = []
+  html = open("./test/fixtures/example.txt").read
+
+  loop do
+    10000.times do
+      AutoCorrect.format(str)
+      AutoCorrect.format_html(html)
+      # a << str
+    end
+    puts GC.stat()[:heap_live_slots]
+  end
+end
+
 task :bench do
   require "benchmark/ips"
   require "./lib/auto-correct"
