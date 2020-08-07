@@ -13,8 +13,8 @@ class AutoCorrect
       ]
 
       @remove_space_rules = [
-        /(#{one})\s+(#{other})/u,
-        /(#{other})\s+(#{one})/u
+        /(#{one})#{SPACE}+(#{other})/u,
+        /(#{other})#{SPACE}+(#{one})/u
       ]
     end
 

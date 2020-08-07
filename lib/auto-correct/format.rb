@@ -1,5 +1,6 @@
 class AutoCorrect
   CJK = '\p{Han}|\p{Hangul}|\p{Hanunoo}|\p{Katakana}|\p{Hiragana}|\p{Bopomofo}'
+  SPACE = "[ ]"
 
   # rubocop:disable Style/StringLiterals
   # EnglishLetter
@@ -16,10 +17,10 @@ class AutoCorrect
   rule '[‘“【「《]', %r([\w#{CJK}]), reverse: true
 
   class << self
-    FULLDATE_RE = /[\s]{0,}\d+[\s]{0,}年[\s]{0,}\d+[\s]{0,}月[\s]{0,}\d+[\s]{0,}[日号][\s]{0,}/u
+    FULLDATE_RE = /#{SPACE}{0,}\d+#{SPACE}{0,}年#{SPACE}{0,}\d+#{SPACE}{0,}月#{SPACE}{0,}\d+#{SPACE}{0,}[日号]#{SPACE}{0,}/u
     DASH_HAN_RE = /([#{CJK}）】」》”’])([\-]+)([#{CJK}（【「《“‘])/
-    LEFT_QUOTE_RE = /\s([（【「《])/
-    RIGHT_QUOTE_RE = /([）】」》])\s/
+    LEFT_QUOTE_RE = /#{SPACE}([（【「《])/
+    RIGHT_QUOTE_RE = /([）】」》])#{SPACE}/
 
     def format(str)
       out = str
