@@ -1,3 +1,8 @@
+0.3.1
+-----------
+
+- Fix some break line miss bug.
+
 0.3.0
 -----------
 
