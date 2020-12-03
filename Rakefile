@@ -19,19 +19,35 @@ task default: :test
 
 require "./lib/auto-correct"
 
-task :leak do
-  str = "【野村：重申吉利汽车(00175)“买入”评级 上调目标价至17.9港元】智通财经APP获悉，野村发布报告称"
+task :memory do
+  str = "【野村：重申吉利汽车(00175)“买入”评级 上调目标价至17.9港元】智通财经APP获悉，野村发布报告称，美国统计局：美国11月原油出口下降至302.3万桶/日，10月为338.3万桶/日。"
   a = []
   html = open("./test/fixtures/example.txt").read
 
-  loop do
-    10000.times do
-      AutoCorrect.format(str)
-      AutoCorrect.format_html(html)
-      # a << str
+  puts "Starting to profile memory..."
+  b = {}
+  puts "Before => #{GC.stat(b)[:heap_live_slots] }"
+  count = 500_000
+  step = (count / 100).to_i
+  count.times do |i|
+    AutoCorrect.format(str)
+    # AutoCorrect.format_html(html)
+
+    if i % step == 0
+      print_memory
+      GC.start
     end
-    puts GC.stat()[:heap_live_slots]
   end
+
+  print_memory
+  puts GC.start
+  puts "After GC"
+  print_memory
+end
+
+def print_memory
+  rss = `ps -eo pid,rss | grep #{Process.pid} | awk '{print $2}'`.to_i
+  puts "rss: #{rss} live objects #{GC.stat[:heap_live_slots]}"
 end
 
 task :bench do

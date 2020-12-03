@@ -23,13 +23,12 @@ class AutoCorrect
     RIGHT_QUOTE_RE = /([）】」》])#{SPACE}/
 
     def format(str)
-      out = str
-      self.strategies.each do |s|
-        out = s.format(out)
+      strategies.each do |s|
+        str = s.format(str)
       end
-      out = remove_full_date_spacing(out)
-      out = space_dash_with_hans(out)
-      out
+      str = remove_full_date_spacing(str)
+      str = space_dash_with_hans(str)
+      str
     end
 
     private
