@@ -86,7 +86,7 @@ Calculating -------------------------------------
 
 ## Use cases
 
-* [Ruby China](https://ruby-china.org) - 目前整站的标题都做了自动转换处理。
+* [Ruby China](https://ruby-china.org) - 目前整站都做了自动转换处理。
 
 ## Links
 
