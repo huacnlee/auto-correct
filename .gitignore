@@ -1,1 +1,4 @@
 *.gem
+target/
+pkg/
+tmp/

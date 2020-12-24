@@ -1,6 +1,0 @@
-language: ruby
-rvm:
-  - 2.6.3
-before_script: bundle install
-script:
-  - bundle exec rake test

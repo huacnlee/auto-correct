@@ -18,7 +18,7 @@ GEM
     i18n (1.8.0)
       concurrent-ruby (~> 1.0)
     mini_portile2 (2.4.0)
-    minitest (5.13.0)
+    minitest (5.14.2)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     rake (13.0.1)
@@ -29,6 +29,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-darwin-20
 
 DEPENDENCIES
   activesupport
@@ -38,4 +39,4 @@ DEPENDENCIES
   rake
 
 BUNDLED WITH
-   2.1.4
+   2.2.2
