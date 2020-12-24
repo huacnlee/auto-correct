@@ -4,9 +4,7 @@ Automatically add whitespace between CJK (Chinese, Japanese, Korean) and half-wi
 
 中文、日语、韩语 + 英文混排自动纠正补充空格，此方式已在 Ruby China 使用多年，支持 HTML 处理。
 
-[![Gem Version](https://badge.fury.io/rb/auto-correct.svg)](https://rubygems.org/gems/auto-correct) [![Build
-Status](https://api.travis-ci.org/huacnlee/auto-correct.svg?branch=master&.svg)](http://travis-ci.org/huacnlee/auto-correct)
-
+[![Gem Version](https://badge.fury.io/rb/auto-correct.svg)](https://rubygems.org/gems/auto-correct) [![build](https://github.com/huacnlee/auto-correct/workflows/build/badge.svg)](https://github.com/huacnlee/auto-correct/actions?query=workflow%3Abuild)
 
 ## Other implements
 
@@ -73,24 +71,24 @@ Calculating -------------------------------------
 ```
 
 | Total chars | Duration |
-| ----- | ------- |
-| 50  | 0.33 ms |
-| 100  | 0.60 ms |
-| 400  | 2 ms |
+| ----------- | -------- |
+| 50          | 0.33 ms  |
+| 100         | 0.60 ms  |
+| 400         | 2 ms     |
 
 ### FormatHTML
 
 | Total chars | Duration |
-| ----- | ------- |
-| 2K  | 7 ms |
+| ----------- | -------- |
+| 2K          | 7 ms     |
 
 ## Use cases
 
-* [Ruby China](https://ruby-china.org) - 目前整站都做了自动转换处理。
+- [Ruby China](https://ruby-china.org) - 目前整站都做了自动转换处理。
 
 ## Links
 
-* [Chinese Copywriting Guidelines](https://github.com/sparanoid/chinese-copywriting-guidelines)
+- [Chinese Copywriting Guidelines](https://github.com/sparanoid/chinese-copywriting-guidelines)
 
 ## License
 
