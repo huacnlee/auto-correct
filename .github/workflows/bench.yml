@@ -1,0 +1,33 @@
+name: bench
+on: pull_request
+jobs:
+  bench:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7
+        bundler-cache: true
+    - id: run-bench
+      run: bundle exec rake bench > bench-result.txt
+    - name: Upload benchmark
+      uses: actions/github-script@v3
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          const issue = context.issue;
+
+          if (!issue.pull_request) {
+            return;
+          }
+
+          const result = fs.readFileSync("./bench-result.txt");
+          
+          await github.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: "Benchmark result:\n\n" + result
+          })
+
