@@ -10,7 +10,7 @@ Automatically add whitespace between CJK (Chinese, Japanese, Korean) and half-wi
 
 - Ruby - [auto-correct](https://github.com/huacnlee/auto-correct).
 - Go - [go-auto-correct](https://github.com/huacnlee/go-auto-correct).
-- Rust - [auto-correct.rs](https://github.com/huacnlee/auto-correct.rs).
+- Rust - [autocorrect](https://github.com/huacnlee/autocorrect).
 
 ## Features
 
@@ -34,7 +34,7 @@ AutoCorrect.format("于3月10日开始")
 # => "于 3 月 10 日开始"
 
 AutoCorrect.format("包装日期为2013年3月10日")
-# => "包装日期为2013年3月10日"
+# => "包装日期为 2013 年 3 月 10 日"
 
 AutoCorrect.format("生产环境中使用Ruby")
 # => "生产环境中使用 Ruby"

@@ -8,7 +8,7 @@ class FormatTest < ActiveSupport::TestCase
       "[成都](团800)招聘Rails工程师": "[成都](团 800) 招聘 Rails 工程师",
       "Teahour.fm\u7B2C18\u671F\u53D1\u5E03": "Teahour.fm 第 18 期发布",
       "Yes!\u5347\u7EA7\u5230\u4E86Rails 4": "Yes! 升级到了 Rails 4",
-      "记事本,记事本显示阅读次数#149": "记事本,记事本显示阅读次数 #149",
+      "记事本,记事本显示阅读次数#149": "记事本,记事本显示阅读次数#149",
       "里面用@foo符号的话后面的变量名会被替换成userN": "里面用 @foo 符号的话后面的变量名会被替换成 userN",
       "WWDC\u4E0A\u8BB2\u5230\u7684Objective C/LLVM\u6539\u8FDB": "WWDC 上讲到的 Objective C/LLVM 改进",
       "在Ubuntu11.10 64位系统安装newrelic出错": "在 Ubuntu11.10 64 位系统安装 newrelic 出错",
@@ -96,7 +96,7 @@ class FormatTest < ActiveSupport::TestCase
 
   test "format for dash with cjk" do
     cases = {
-      "全世界已有数百家公司在生产环境中使用Rust，以达到快速、跨平台、低资源占用的目的。很多著名且受欢迎的软件，例如Firefox、 Dropbox 和 Cloudflare都在使用Rust。": "全世界已有数百家公司在生产环境中使用 Rust，以达到快速、跨平台、低资源占用的目的。很多著名且受欢迎的软件，例如 Firefox、 Dropbox 和 Cloudflare 都在使用 Rust。",
+      "全世界已有数百家公司在生产环境中使用Rust，以达到快速、跨平台、低资源占用的目的。很多著名且受欢迎的软件，例如Firefox、Dropbox": "全世界已有数百家公司在生产环境中使用 Rust，以达到快速、跨平台、低资源占用的目的。很多著名且受欢迎的软件，例如 Firefox、Dropbox",
       "現今全世界上百家公司企業為了尋求快速、節約資源而且能跨平台的解決辦法，都已在正式環境中使用Rust。許多耳熟能詳且受歡迎的軟體，諸如Firefox、Dropbox以及Cloudflare都在使用Rust。": "現今全世界上百家公司企業為了尋求快速、節約資源而且能跨平台的解決辦法，都已在正式環境中使用 Rust。許多耳熟能詳且受歡迎的軟體，諸如 Firefox、Dropbox 以及 Cloudflare 都在使用 Rust。",
       "既に、世界中の数百という企業がRustを採用し、高速で低リソースのクロスプラットフォームソリューションを実現しています。皆さんがご存じで愛用しているソフトウェア、例えばFirefox、DropboxやCloudflareも、Rustを採用しています。": "既に、世界中の数百という企業が Rust を採用し、高速で低リソースのクロスプラットフォームソリューションを実現しています。皆さんがご存じで愛用しているソフトウェア、例えば Firefox、Dropbox や Cloudflare も、Rust を採用しています。",
       "전 세계 수백 개의 회사가 프로덕션 환경에서 Rust를 사용하여 빠르고, 크로스 플랫폼 및 낮은 리소스 사용량을 달성했습니다. Firefox, Dropbox 및 Cloudflare와 같이 잘 알려져 있고 널리 사용되는 많은 소프트웨어가 Rust를 사용하고 있습니다.": "전 세계 수백 개의 회사가 프로덕션 환경에서 Rust 를 사용하여 빠르고, 크로스 플랫폼 및 낮은 리소스 사용량을 달성했습니다. Firefox, Dropbox 및 Cloudflare 와 같이 잘 알려져 있고 널리 사용되는 많은 소프트웨어가 Rust 를 사용하고 있습니다."
