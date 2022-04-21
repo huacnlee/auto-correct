@@ -23,6 +23,8 @@ Rake::ExtensionTask.new("autocorrect") do |ext|
   ext.cross_platform = %w[x86-linux x86_64-linux x86_64-darwin arm64-darwin aarch64-linux]
 end
 
+task default: %i[clobber compile test]
+
 task :memory do
   str = "【野村：重申吉利汽车(00175)“买入”评级 上调目标价至17.9港元】智通财经APP获悉，野村发布报告称，美国统计局：美国11月原油出口下降至302.3万桶/日，10月为338.3万桶/日。"
 

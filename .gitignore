@@ -3,3 +3,4 @@
 target/
 pkg/
 tmp/
+.DS_Store

@@ -15,5 +15,5 @@ Gem::Specification.new do |s|
 
   s.extensions = ["ext/autocorrect/extconf.rb"]
 
-  s.add_runtime_dependency "rb_sys1", "~> 0.1", ">= 0.1.2"
+  s.add_runtime_dependency "rb_sys1", "~> 0.1", ">= 0.1.3"
 end
