@@ -7,13 +7,11 @@ Gem::Specification.new do |s|
   s.authors = ["Luikore", "Jason Lee"]
   s.email = ["usurffx@gmail.com", "huacnlee@gmail.com"]
   s.homepage = "https://github.com/huacnlee/autocorrect"
-  s.summary = "Automatically add whitespace between Chinese and and half-width characters (alphabetical letters, numerical digits and symbols)."
-  s.description = "Automatically add whitespace between Chinese and and half-width characters (alphabetical letters, numerical digits and symbols)."
-  s.files = Dir.glob("lib/**/*.rb") + Dir.glob("{ext}/**/*") + %w[README.md Rakefile]
+  s.summary = "Automatically add whitespace between CJK and and half-width characters."
+  s.description = "Automatically add whitespace between CJK (Chinese, Japanese, Korean) and and half-width characters (alphabetical letters, numerical digits and symbols)."
+  s.files = Dir.glob("lib/**/*") + %w[README.md Rakefile]
   s.require_paths = ["lib"]
-  s.required_rubygems_version = ">= 3.3.11"
-
-  s.extensions = ["ext/autocorrect/extconf.rb"]
+  s.license = "MIT"
 
   s.add_runtime_dependency "rb_sys1", "~> 0.1", ">= 0.1.3"
 end

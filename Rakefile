@@ -9,6 +9,9 @@ end
 require "bundler/gem_tasks"
 require "rake/testtask"
 require "rake/extensiontask"
+require "bundler"
+
+spec = Bundler.load_gemspec("auto-correct.gemspec")
 
 Rake::TestTask.new(:test) do |t|
   t.libs << "test"
@@ -16,11 +19,15 @@ Rake::TestTask.new(:test) do |t|
   t.test_files = FileList["test/**/*_test.rb"]
 end
 
-Rake::ExtensionTask.new("autocorrect") do |ext|
+# add your default gem packing task
+Gem::PackageTask.new(spec) do |s|
+end
+
+Rake::ExtensionTask.new("autocorrect", spec) do |ext|
   ext.lib_dir = "lib/auto-correct"
   ext.source_pattern = "*.{rs,toml}"
   ext.cross_compile = true
-  ext.cross_platform = %w[x86-linux x86_64-linux x86_64-darwin arm64-darwin aarch64-linux]
+  ext.cross_platform = %w[x86_64-linux x86_64-darwin arm64-darwin aarch64-linux]
 end
 
 task default: %i[clobber compile test]
