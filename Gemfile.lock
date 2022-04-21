@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    auto-correct (1.0.0)
-      nokogiri (>= 1.4)
+    auto-correct (1.1.0)
+      rb_sys1 (>= 0.1.1)
 
 GEM
   remote: https://rubygems.org/
@@ -17,15 +17,11 @@ GEM
     concurrent-ruby (1.1.5)
     i18n (1.8.0)
       concurrent-ruby (~> 1.0)
-    mini_portile2 (2.5.3)
     minitest (5.14.2)
-    nokogiri (1.11.7)
-      mini_portile2 (~> 2.5.0)
-      racc (~> 1.4)
-    nokogiri (1.11.7-x86_64-darwin)
-      racc (~> 1.4)
-    racc (1.5.2)
     rake (13.0.1)
+    rake-compiler (1.2.0)
+      rake
+    rb_sys1 (0.1.1)
     thread_safe (0.3.6)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
@@ -41,6 +37,7 @@ DEPENDENCIES
   benchmark-ips
   minitest
   rake
+  rake-compiler
 
 BUNDLED WITH
    2.2.4

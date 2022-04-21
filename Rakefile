@@ -8,6 +8,7 @@ end
 
 require "bundler/gem_tasks"
 require "rake/testtask"
+require "rake/extensiontask"
 
 Rake::TestTask.new(:test) do |t|
   t.libs << "test"
@@ -15,23 +16,23 @@ Rake::TestTask.new(:test) do |t|
   t.test_files = FileList["test/**/*_test.rb"]
 end
 
-task default: :test
-
-require "./lib/auto-correct"
+Rake::ExtensionTask.new("autocorrect") do |ext|
+  ext.lib_dir = "lib/auto-correct"
+  ext.source_pattern = "*.{rs,toml}"
+  ext.cross_compile = true
+  ext.cross_platform = %w[x86-linux x86_64-linux x86_64-darwin arm64-darwin aarch64-linux]
+end
 
 task :memory do
   str = "【野村：重申吉利汽车(00175)“买入”评级 上调目标价至17.9港元】智通财经APP获悉，野村发布报告称，美国统计局：美国11月原油出口下降至302.3万桶/日，10月为338.3万桶/日。"
-  a = []
-  html = open("./test/fixtures/example.txt").read
 
   puts "Starting to profile memory..."
   b = {}
-  puts "Before => #{GC.stat(b)[:heap_live_slots] }"
+  puts "Before => #{GC.stat(b)[:heap_live_slots]}"
   count = 500_000
   step = (count / 100).to_i
   count.times do |i|
     AutoCorrect.format(str)
-    # AutoCorrect.format_html(html)
 
     if i % step == 0
       print_memory

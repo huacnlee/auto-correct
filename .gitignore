@@ -1,4 +1,5 @@
 *.gem
+*.bundle
 target/
 pkg/
 tmp/
