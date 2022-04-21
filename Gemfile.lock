@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     auto-correct (1.1.0)
-      rb_sys1 (>= 0.1.1)
+      rb_sys1 (>= 0.1.2)
 
 GEM
   remote: https://rubygems.org/
@@ -21,7 +21,7 @@ GEM
     rake (13.0.1)
     rake-compiler (1.2.0)
       rake
-    rb_sys1 (0.1.1)
+    rb_sys1 (0.1.2)
     thread_safe (0.3.6)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
