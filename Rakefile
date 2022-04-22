@@ -12,6 +12,7 @@ require "rake/extensiontask"
 require "bundler"
 
 spec = Bundler.load_gemspec("auto-correct.gemspec")
+ruby_cc_version = "RUBY_CC_VERSION=3.1.0:3.0.0:2.7.0:2.6.0"
 
 Rake::TestTask.new(:test) do |t|
   t.libs << "test"
@@ -19,17 +20,25 @@ Rake::TestTask.new(:test) do |t|
   t.test_files = FileList["test/**/*_test.rb"]
 end
 
-# add your default gem packing task
 Gem::PackageTask.new(spec) do |s|
 end
 
-cross_platforms = %w[x86_64-linux x86_64-darwin arm64-darwin aarch64-linux]
+platforms = {
+  "x86_64-darwin" => "x86_64-apple-darwin",
+  "arm64-darwin" => "aarch64-apple-darwin",
+  "x86_64-linux" => "x86_64-unknown-linux-gnu"
+}
 
-Rake::ExtensionTask.new("autocorrect", spec) do |ext|
+Rake::ExtensionTask.new("autocorrect") do |ext|
+  ext.gem_spec = spec
   ext.lib_dir = "lib/auto-correct"
   ext.source_pattern = "*.{rs,toml}"
   ext.cross_compile = true
-  ext.cross_platform = cross_platforms
+  ext.cross_platform = platforms.keys
+end
+
+task "gem:native" do
+  system "rake native gem #{ruby_cc_version}"
 end
 
 task default: %i[clobber compile test]

@@ -13,9 +13,14 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - target: x86_64-linux
+          - cargo_build_target: x86_64-unknown-linux-gnu
+            target: x86_64-linux
             os: ubuntu-latest
-          - target: x86_64-darwin
+          - cargo_build_target: x86_64-apple-darwin
+            target: x86_64-darwin
+            os: macos-latest
+          - cargo_build_target: aarch64-apple-darwin
+            target: arm64-darwin
             os: macos-latest
     runs-on: ${{ matrix.os }}
     steps:
@@ -30,10 +35,23 @@ jobs:
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
+          target: ${{ matrix.cargo_build_target }}
+      - name: Cross Ruby
+        run: |
+          gem install rake-compiler
+          mkdir ~/.rake-compiler/
+          rake-compiler cross-ruby HOST=${{ matrix.target }} VERSION=3.1.0
       - name: Compile
-        run: bundle && bundle exec rake native gem
+        env:
+          CARGO_BUILD_TARGET: ${{ matrix.cargo_build_target }}
+        run: |
+          bundle
+          rake compile
+          rake package
+          mv pkg/*.gem pkg/auto-correct-${{ matrix.target }}.gem
+          # gem push -k ${{ secrets.RUBYGEMS_API_KEY }} pkg/auto-correct-${{ matrix.target }}.gem
       - uses: actions/upload-artifact@v2
         with:
-          name: autocorrect-${{ matrix.target }}
-          path: pkg/
+          name: auto-correct-${{ matrix.target }}
+          path: pkg/auto-correct-${{ matrix.target }}.gem
           retention-days: 1
