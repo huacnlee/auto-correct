@@ -34,7 +34,7 @@ DEPENDENCIES
   benchmark-ips
   minitest
   rake
-  rake-compiler
+  rake-compiler (~> 1.2)
 
 BUNDLED WITH
    2.2.4

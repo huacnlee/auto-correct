@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.files = Dir.glob("lib/**/*") + %w[README.md Rakefile]
   s.require_paths = ["lib"]
   s.license = "MIT"
+  s.required_ruby_version = ">= 3.0.0"
 
   s.add_runtime_dependency "rb_sys1", "~> 0.1", ">= 0.1.3"
 end

@@ -23,42 +23,16 @@ end
 Gem::PackageTask.new(spec) do |s|
 end
 
+cross_platforms = %w[x86_64-linux x86_64-darwin arm64-darwin aarch64-linux]
+
 Rake::ExtensionTask.new("autocorrect", spec) do |ext|
   ext.lib_dir = "lib/auto-correct"
   ext.source_pattern = "*.{rs,toml}"
   ext.cross_compile = true
-  ext.cross_platform = %w[x86_64-linux x86_64-darwin arm64-darwin aarch64-linux]
+  ext.cross_platform = cross_platforms
 end
 
 task default: %i[clobber compile test]
-
-task :memory do
-  str = "【野村：重申吉利汽车(00175)“买入”评级 上调目标价至17.9港元】智通财经APP获悉，野村发布报告称，美国统计局：美国11月原油出口下降至302.3万桶/日，10月为338.3万桶/日。"
-
-  puts "Starting to profile memory..."
-  b = {}
-  puts "Before => #{GC.stat(b)[:heap_live_slots]}"
-  count = 500_000
-  step = (count / 100).to_i
-  count.times do |i|
-    AutoCorrect.format(str)
-
-    if i % step == 0
-      print_memory
-      GC.start
-    end
-  end
-
-  print_memory
-  puts GC.start
-  puts "After GC"
-  print_memory
-end
-
-def print_memory
-  rss = `ps -eo pid,rss | grep #{Process.pid} | awk '{print $2}'`.to_i
-  puts "rss: #{rss} live objects #{GC.stat[:heap_live_slots]}"
-end
 
 task :bench do
   require "benchmark/ips"

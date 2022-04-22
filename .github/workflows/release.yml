@@ -1,0 +1,39 @@
+name: Release
+on:
+  push:
+    branches:
+      - "feat/rust-ext"
+    tags:
+      - "v*"
+
+jobs:
+  release_gem:
+    name: Release RubyGems
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: x86_64-linux
+            os: ubuntu-latest
+          - target: x86_64-darwin
+            os: macos-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - if: matrix.os == 'ubuntu-latest'
+        run: sudo apt update && sudo apt install -y libclang-dev
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1.0
+          bundler-cache: true
+      - name: Install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - name: Compile
+        run: bundle && bundle exec rake native gem
+      - uses: actions/upload-artifact@v2
+        with:
+          name: autocorrect-${{ matrix.target }}
+          path: pkg/
+          retention-days: 1
