@@ -1,35 +1,27 @@
 PATH
   remote: .
   specs:
-    auto-correct (1.0.0)
-      nokogiri (>= 1.4)
+    auto-correct (1.1.0.beta)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (6.0.2.1)
+    activesupport (7.0.2.3)
       concurrent-ruby (~> 1.0, >= 1.0.2)
-      i18n (>= 0.7, < 2)
-      minitest (~> 5.1)
-      tzinfo (~> 1.1)
-      zeitwerk (~> 2.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
     benchmark-ips (2.8.2)
-    concurrent-ruby (1.1.5)
-    i18n (1.8.0)
+    concurrent-ruby (1.1.10)
+    i18n (1.10.0)
       concurrent-ruby (~> 1.0)
-    mini_portile2 (2.5.3)
-    minitest (5.14.2)
-    nokogiri (1.11.7)
-      mini_portile2 (~> 2.5.0)
-      racc (~> 1.4)
-    nokogiri (1.11.7-x86_64-darwin)
-      racc (~> 1.4)
-    racc (1.5.2)
-    rake (13.0.1)
-    thread_safe (0.3.6)
-    tzinfo (1.2.6)
-      thread_safe (~> 0.1)
-    zeitwerk (2.2.2)
+    minitest (5.15.0)
+    rake (13.0.6)
+    rake-compiler (1.2.0)
+      rake
+    rb_sys1 (0.1.3)
+    tzinfo (2.0.4)
+      concurrent-ruby (~> 1.0)
 
 PLATFORMS
   ruby
@@ -41,6 +33,8 @@ DEPENDENCIES
   benchmark-ips
   minitest
   rake
+  rake-compiler (~> 1.2)
+  rb_sys1 (~> 0.1)
 
 BUNDLED WITH
    2.2.4

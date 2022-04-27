@@ -14,7 +14,7 @@ class ActiveSupport::TestCase
   end
 
   def assert_html_equal(excepted, html)
-    assert_equal excepted.strip.gsub(/>[\s]+</, "><"), html.strip.gsub(/>[\s]+</, "><")
+    assert_equal excepted.strip.gsub(/>\s+</, "><"), html.strip.gsub(/>\s+</, "><")
   end
 
   def assert_format_cases(cases)

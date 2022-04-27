@@ -1,0 +1,43 @@
+name: Release
+on:
+  push:
+    branches:
+      - "feat/rust-ext"
+    tags:
+      - "v*"
+
+jobs:
+  release_gem:
+    name: Release RubyGems
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - cargo_build_target: x86_64-unknown-linux-gnu
+            target: x86_64-linux
+            os: ubuntu-latest
+          - cargo_build_target: x86_64-apple-darwin
+            target: x86_64-darwin
+            os: macos-latest
+          - cargo_build_target: aarch64-apple-darwin
+            target: arm64-darwin
+            os: macos-latest
+    runs-on: ubuntu-latest
+    container:
+      image: "rbsys/rake-compiler-dock-mri-${{ matrix.target }}:1.2.1"
+    steps:
+      - uses: actions/checkout@v2
+      - name: Compile
+        env:
+          CARGO_BUILD_TARGET: ${{ matrix.cargo_build_target }}
+        shell: bash
+        run: |
+          bundle
+          rake cross native gem
+          mv pkg/*.gem pkg/auto-correct-${{ matrix.target }}.gem
+          # gem push -k ${{ secrets.RUBYGEMS_API_KEY }} pkg/auto-correct-${{ matrix.target }}.gem
+      - uses: actions/upload-artifact@v2
+        with:
+          name: auto-correct-${{ matrix.target }}
+          path: pkg/auto-correct-${{ matrix.target }}.gem
+          retention-days: 1

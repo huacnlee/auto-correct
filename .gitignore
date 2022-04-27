@@ -1,4 +1,6 @@
 *.gem
+*.bundle
 target/
 pkg/
 tmp/
+.DS_Store

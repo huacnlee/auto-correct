@@ -8,6 +8,11 @@ end
 
 require "bundler/gem_tasks"
 require "rake/testtask"
+require "rake/extensiontask"
+require "bundler"
+
+spec = Bundler.load_gemspec("auto-correct.gemspec")
+ruby_cc_version = "RUBY_CC_VERSION=3.1.0:3.0.0:2.7.0:2.6.0"
 
 Rake::TestTask.new(:test) do |t|
   t.libs << "test"
@@ -15,40 +20,29 @@ Rake::TestTask.new(:test) do |t|
   t.test_files = FileList["test/**/*_test.rb"]
 end
 
-task default: :test
-
-require "./lib/auto-correct"
-
-task :memory do
-  str = "【野村：重申吉利汽车(00175)“买入”评级 上调目标价至17.9港元】智通财经APP获悉，野村发布报告称，美国统计局：美国11月原油出口下降至302.3万桶/日，10月为338.3万桶/日。"
-  a = []
-  html = open("./test/fixtures/example.txt").read
-
-  puts "Starting to profile memory..."
-  b = {}
-  puts "Before => #{GC.stat(b)[:heap_live_slots] }"
-  count = 500_000
-  step = (count / 100).to_i
-  count.times do |i|
-    AutoCorrect.format(str)
-    # AutoCorrect.format_html(html)
-
-    if i % step == 0
-      print_memory
-      GC.start
-    end
-  end
-
-  print_memory
-  puts GC.start
-  puts "After GC"
-  print_memory
+Gem::PackageTask.new(spec) do |s|
 end
 
-def print_memory
-  rss = `ps -eo pid,rss | grep #{Process.pid} | awk '{print $2}'`.to_i
-  puts "rss: #{rss} live objects #{GC.stat[:heap_live_slots]}"
+platforms = {
+  "x86_64-darwin" => "x86_64-apple-darwin",
+  "arm64-darwin" => "aarch64-apple-darwin",
+  "x86_64-linux" => "x86_64-unknown-linux-gnu"
+}
+
+Rake::ExtensionTask.new("autocorrect") do |ext|
+  ext.gem_spec = spec
+  ext.lib_dir = "lib/auto-correct"
+  ext.source_pattern = "*.{rs,toml}"
+  ext.no_native = true
+  ext.cross_compile = true
+  ext.cross_platform = platforms.keys
 end
+
+task "gem:native" do
+  system "rake native gem #{ruby_cc_version}"
+end
+
+task default: %i[clobber compile test]
 
 task :bench do
   require "benchmark/ips"

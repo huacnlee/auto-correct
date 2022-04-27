@@ -1,0 +1,12 @@
+[package]
+edition = "2021"
+name = "autocorrect"
+version = "1.5.11"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+autocorrect = "1.5.11"
+rb-sys = {version = "0.8.0", features = ["link-ruby", "ruby-static"]}
