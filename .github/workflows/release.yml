@@ -22,32 +22,18 @@ jobs:
           - cargo_build_target: aarch64-apple-darwin
             target: arm64-darwin
             os: macos-latest
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
+    container:
+      image: "rbsys/rake-compiler-dock-mri-${{ matrix.target }}:1.2.1"
     steps:
-      - if: matrix.os == 'ubuntu-latest'
-        run: sudo apt update && sudo apt install -y libclang-dev
       - uses: actions/checkout@v2
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.1.0
-          bundler-cache: true
-      - name: Install Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          target: ${{ matrix.cargo_build_target }}
-      - name: Cross Ruby
-        run: |
-          gem install rake-compiler
-          mkdir ~/.rake-compiler/
-          rake-compiler cross-ruby HOST=${{ matrix.target }} VERSION=3.1.0
       - name: Compile
         env:
           CARGO_BUILD_TARGET: ${{ matrix.cargo_build_target }}
+        shell: bash
         run: |
           bundle
-          rake compile
-          rake package
+          rake cross native gem
           mv pkg/*.gem pkg/auto-correct-${{ matrix.target }}.gem
           # gem push -k ${{ secrets.RUBYGEMS_API_KEY }} pkg/auto-correct-${{ matrix.target }}.gem
       - uses: actions/upload-artifact@v2

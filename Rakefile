@@ -33,6 +33,7 @@ Rake::ExtensionTask.new("autocorrect") do |ext|
   ext.gem_spec = spec
   ext.lib_dir = "lib/auto-correct"
   ext.source_pattern = "*.{rs,toml}"
+  ext.no_native = true
   ext.cross_compile = true
   ext.cross_platform = platforms.keys
 end
