@@ -1,6 +1,8 @@
 # auto-correct
 
-> NOTE: This gem has not mantained for a long time, please move to: https://github.com/huacnlee/autocorrect/tree/main/autocorrect-rb
+> 🎈 This gem has not mantained for a long time, because there have a new 🎊 Rust base version.
+>
+> Please move to: https://github.com/huacnlee/autocorrect/tree/main/autocorrect-rb
 
 Automatically add whitespace between CJK (Chinese, Japanese, Korean) and half-width characters (alphabetical letters, numerical digits and symbols).
 
