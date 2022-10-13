@@ -1,3 +1,9 @@
+## 1.1.0
+
+- Switch to use Rust version [autocorrect](https://github.com/huacnlee/autocorrect).
+
+This gem has not mantained for a long time, please move to: https://github.com/huacnlee/autocorrect/tree/main/autocorrect-rb
+
 ## 1.0.0
 
 - Add space for full date.

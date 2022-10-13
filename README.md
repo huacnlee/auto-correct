@@ -1,5 +1,7 @@
 # auto-correct
 
+> NOTE: This gem has not mantained for a long time, please move to: https://github.com/huacnlee/autocorrect/tree/main/autocorrect-rb
+
 Automatically add whitespace between CJK (Chinese, Japanese, Korean) and half-width characters (alphabetical letters, numerical digits and symbols).
 
 中文、日语、韩语 + 英文混排自动纠正补充空格，此方式已在 Ruby China 使用多年，支持 HTML 处理。

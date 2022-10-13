@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    auto-correct (1.0.0)
-      nokogiri (>= 1.4)
+    auto-correct (1.1.0)
+      autocorrect-rb (>= 2.1.2)
 
 GEM
   remote: https://rubygems.org/
@@ -13,19 +13,19 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2)
+    autocorrect-rb (2.1.2-arm64-darwin)
+      rb_sys (>= 0.9.18)
+    autocorrect-rb (2.1.2-x86_64-darwin)
+      rb_sys (>= 0.9.18)
+    autocorrect-rb (2.1.2-x86_64-linux)
+      rb_sys (>= 0.9.18)
     benchmark-ips (2.8.2)
     concurrent-ruby (1.1.5)
     i18n (1.8.0)
       concurrent-ruby (~> 1.0)
-    mini_portile2 (2.5.3)
-    minitest (5.14.2)
-    nokogiri (1.11.7)
-      mini_portile2 (~> 2.5.0)
-      racc (~> 1.4)
-    nokogiri (1.11.7-x86_64-darwin)
-      racc (~> 1.4)
-    racc (1.5.2)
+    minitest (5.16.3)
     rake (13.0.1)
+    rb_sys (0.9.31)
     thread_safe (0.3.6)
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
